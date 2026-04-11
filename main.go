@@ -19,8 +19,8 @@ func main() {
 			log.Println("Failed to get RAM usage")
 			return
 		}
-		fmt.Fprintf(w, "CPU usage:\t%.2f%%\n", CPUUsage)
-		fmt.Fprintf(w, "RAM usage:\t%.2f%%\n", RAMUsage)
+		fmt.Fprintf(w, "cpu_usage_percent %.2f\n", CPUUsage)
+		fmt.Fprintf(w, "ram_usage_percent %.2f\n", RAMUsage)
 	})
 
 	port := 8080
