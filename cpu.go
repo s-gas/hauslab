@@ -1,12 +1,13 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/shirou/gopsutil/v3/cpu"
 )
 
-func getCPUUsage() {
-	percent, _ := cpu.Percent(0, false)
-	fmt.Printf("CPU usage:\t%.2f%%\n", percent[0])
+func getCPUUsage() (float64, error) {
+	percent, err := cpu.Percent(0, false)
+	if err != nil {
+		return 0.0, err
+	}
+	return percent[0], nil
 }
