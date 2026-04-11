@@ -6,7 +6,7 @@ import (
 	"github.com/shirou/gopsutil/v3/cpu"
 )
 
-func getCPU() {
+func getCPUUsage() {
 	percent, _ := cpu.Percent(0, false)
-	fmt.Printf("CPU usage: %.2f\n", percent[0])
+	fmt.Printf("CPU usage:\t%.2f%%\n", percent[0])
 }
