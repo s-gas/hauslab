@@ -2,20 +2,32 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"log"
+	"net/http"
 )
 
 func main() {
-	CPUUsage, err := getCPUUsage()
+	endpoint := "/metrics"
+	http.HandleFunc(endpoint, func(w http.ResponseWriter, r *http.Request) {
+		CPUUsage, err := getCPUUsage()
+		if err != nil {
+			log.Println("Failed to get CPU usage")
+			return
+		}
+		RAMUsage, err := getRAMUsage()
+		if err != nil {
+			log.Println("Failed to get RAM usage")
+			return
+		}
+		fmt.Printf("CPU usage:\t%.2f%%\n", CPUUsage)
+		fmt.Printf("RAM usage:\t%.2f%%\n", RAMUsage)
+	})
+
+	port := 8080
+	addr := fmt.Sprintf(":%d", port)
+	fmt.Printf("traces listening on %s%s\n", addr, endpoint)
+	err := http.ListenAndServe(addr, nil)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "Failed to get CPU usage")
-		return
+		log.Fatal(err)
 	}
-	RAMUsage, err := getRAMUsage()
-	if err != nil {
-		fmt.Fprintln(os.Stderr, "Failed to get RAM usage")
-		return
-	}
-	fmt.Printf("CPU usage:\t%.2f%%\n", CPUUsage)
-	fmt.Printf("RAM usage:\t%.2f%%\n", RAMUsage)
 }
