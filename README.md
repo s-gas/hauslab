@@ -19,7 +19,7 @@ System monitor that collects CPU and RAM usage and displays the metrics through 
 
 ### Volumes
 
-Two persistent volumes store the Prometheus and Grafana data.
+Two persistent volumes store Prometheus and Grafana data.
 
 ## How to run
 
