@@ -6,6 +6,21 @@
 
 System monitor that collects CPU and RAM usage and displays the metrics through Prometheus and Grafana.
 
+### Services
+
+- **Go App**  
+  Runs natively on the machine and exposes the metrics at `/metrics` endpoint
+
+- **Prometheus**  
+  Runs in a Docker container and scrapes the endpoint every 15 seconds and stores the data.
+
+- **Grafana**  
+  Runs in a Docker container and displays the data in a dashboard.
+
+### Volumes
+
+Two persistent volumes store the Prometheus and Grafana data.
+
 ## How to run
 
 *Note: to run this project you need to have [Docker](https://www.docker.com/) and [Go](https://go.dev/) installed.*
@@ -34,4 +49,10 @@ To stop the containers:
 
 ```bash
 docker compose down
+```
+
+To wipe the data in the named volumes:
+
+```bash
+docker compose down -v
 ```
