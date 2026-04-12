@@ -24,7 +24,7 @@ func main() {
 
 	port := 8080
 	addr := fmt.Sprintf(":%d", port)
-	fmt.Printf("traces listening on %s%s\n", addr, endpoint)
+	fmt.Printf("sysmetrics listening on %s%s\n", addr, endpoint)
 	err := http.ListenAndServe(addr, nil)
 	if err != nil {
 		log.Fatal(err)

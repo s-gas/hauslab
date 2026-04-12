@@ -1,4 +1,4 @@
-module traces
+module sysmetrics
 
 go 1.26.1
 
