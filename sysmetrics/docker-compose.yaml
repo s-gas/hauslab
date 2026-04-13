@@ -5,4 +5,6 @@ services:
     build: ./metrics-server
     ports:
       - "1024:1024"
+    volumes:
+      - /proc:/proc
     restart: unless-stopped
