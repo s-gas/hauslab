@@ -8,3 +8,15 @@ services:
     volumes:
       - /proc:/proc
     restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v3
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    restart: unless-stopped
+
+volumes:
+  prometheus_data:
