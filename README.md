@@ -1,6 +1,5 @@
 # hauslab
 
-## Description
 My homelab, the playground where I experiment with Backend and DevOps concepts by self-hosting services on a Linux machine. 
 
 ## Hardware
