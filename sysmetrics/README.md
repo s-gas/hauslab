@@ -35,7 +35,7 @@ flowchart TB
   Runs in a Docker container and scrapes the endpoint every 10 seconds and stores the data.
 
 - **Grafana**  
-  Runs in a Docker container and displays the data in a dashboard.
+  Runs in a Docker container and displays the data in a dashboard, which is accessible at `http://localhost:3000`. The admin password necessary to access the dashboard is stored as a Docker secret in `secret/grafana_password.txt`.
 
 ### Volumes
 
@@ -57,11 +57,20 @@ Change to the service directory:
 cd hauslab/sysmetrics
 ```
 
+Create the file to store the admin password necessary to access the dashboard:
+
+```bash
+mkdir secrets
+printf '<password>' > secrets/grafana_password.txt
+```
+
 Run the containers:
 
 ```bash
 docker compose up
 ```
+
+To view the dashboard, navigate to `http://localhost:3000` and login as admin using the password stored in `secrets/grafana_password.txt`
 
 To stop the containers:
 

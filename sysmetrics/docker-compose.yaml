@@ -25,7 +25,16 @@ services:
       - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
+    secrets:
+      - grafana_password
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/grafana_password
+    restart: unless-stopped
 
 volumes:
   prometheus_data: {}
   grafana_data: {}
+
+secrets:
+  grafana_password:
+    file: secrets/grafana_password.txt
