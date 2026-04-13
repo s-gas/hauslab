@@ -4,16 +4,12 @@ services:
   metrics-server:
     build: ./metrics-server
     image: metrics-server:1.0.0
-    ports:
-      - "1024:1024"
     volumes:
       - /proc:/proc
     restart: unless-stopped
 
   prometheus:
     image: prom/prometheus:v3.11.1
-    ports:
-      - "9090:9090"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
