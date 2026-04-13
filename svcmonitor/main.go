@@ -7,15 +7,17 @@ import (
 )
 
 func main() {
+	services := getServices()
+	s := services["sysmetrics"]
 	for {
-		resp, err := http.Get("http://localhost:3000")
+		resp, err := http.Get(s.domain)
 		if err != nil {
-			fmt.Println("Server listening at 3000 is down")
+			fmt.Printf("%s:%d is down\n", s.name, s.port)
 		}
 		if resp.StatusCode != 200 {
-			fmt.Println("Server listening at 3000 is down")
+			fmt.Printf("%s:%d is down\n", s.name, s.port)
 		} else {
-			fmt.Println("Server listening at 3000 is up")
+			fmt.Printf("%s:%d is up\n", s.name, s.port)
 		}
 		time.Sleep(5 * time.Second)
 	}
