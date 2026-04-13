@@ -4,7 +4,7 @@
 
 ## Description
 
-System monitor that collects CPU and RAM usage and displays the metrics through Prometheus and Grafana.
+Go Server that collects host CPU and RAM usage and displays them through Prometheus and Grafana.
 
 ### Diagram of the infrastructure:
 
