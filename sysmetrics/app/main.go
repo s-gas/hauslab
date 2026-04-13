@@ -22,7 +22,7 @@ func main() {
 		writeMetrics(w, cpu, ram)
 	})
 
-	port := 8080
+	port := 1024
 	addr := fmt.Sprintf(":%d", port)
 	fmt.Printf("sysmetrics listening on %s%s\n", addr, endpoint)
 	err := http.ListenAndServe(addr, nil)
