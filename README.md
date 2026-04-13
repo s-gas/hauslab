@@ -1,11 +1,16 @@
 # hauslab
 
 ## Description
+My homelab, the playground where I experiment with Backend and DevOps concepts by self-hosting services on a Linux machine. 
 
-My personal homelab where I run self-hosted services on a Linux server.
+## Hardware
+Lenovo ThinkCentre M710Q Tiny
+- **CPU**: Intel Core i3 3.2GHz
+- **Storage**: 256GB SSD
+- **RAM**: 8GB
+- **OS**: Debian
 
 ## Services
-
 - ### [sysmetrics](./sysmetrics)
 
   Go Server that collects CPU and RAM usage and displays them through Prometheus and Grafana.
