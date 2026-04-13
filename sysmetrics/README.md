@@ -6,6 +6,26 @@
 
 System monitor that collects CPU and RAM usage and displays the metrics through Prometheus and Grafana.
 
+### Diagram of the infrastructure:
+
+```mermaid
+flowchart TB
+    A([WWW])
+    B[GRAFANA]
+    C[PROMETHEUS]
+    D[SERVER]
+    E[(Volume)]
+    F[(Volume)]
+
+    A <-->|3000| B
+    B <-->|9090| C
+    C <-->|1024| D
+
+    B <----> E
+    C <--> E
+    D <--> F
+```
+
 ### Services
 
 - **Go App**  
