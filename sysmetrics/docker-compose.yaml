@@ -1,8 +1,8 @@
 name: sysmetrics
 
 services:
-  sysmetrics:
-    build: ./sysmetrics
+  metrics-server:
+    build: ./metrics-server
     ports:
       - "1024:1024"
     restart: unless-stopped
