@@ -22,7 +22,7 @@ flowchart TB
     C <-->|1024| D
 
     B <----> E
-    C <--> F
+    C <---> F
 ```
 
 ### Services
