@@ -35,7 +35,7 @@ flowchart TB
   Runs in a Docker container and scrapes the endpoint every 10 seconds and stores the data.
 
 - **Grafana**  
-  Runs in a Docker container and displays the data in a dashboard, which is accessible at `http://localhost:3000`. The admin password necessary to access the dashboard is stored as a Docker secret in `secret/grafana_password.txt`.
+  Runs in a Docker container and displays the data in a dashboard, which is accessible at `http://localhost:3000`. The admin password necessary to access the dashboard is stored as a Docker secret in `secrets/grafana_password.txt`.
 
 ### Volumes
 
@@ -70,7 +70,9 @@ Run the containers:
 docker compose up
 ```
 
-To view the dashboard, navigate to `http://localhost:3000` and login as admin using the password stored in `secrets/grafana_password.txt`
+To view the dashboard, navigate to `http://localhost:3000` and login as admin using the password stored in `secrets/grafana_password.txt`.
+
+## How to stop
 
 To stop the containers:
 
@@ -78,7 +80,7 @@ To stop the containers:
 docker compose down
 ```
 
-To wipe the data in the named volumes:
+To wipe all the data in the volumes:
 
 ```bash
 docker compose down -v
