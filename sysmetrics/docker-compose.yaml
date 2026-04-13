@@ -3,6 +3,7 @@ name: sysmetrics
 services:
   metrics-server:
     build: ./metrics-server
+    image: metrics-server:1.0.0
     ports:
       - "1024:1024"
     volumes:
@@ -10,7 +11,7 @@ services:
     restart: unless-stopped
 
   prometheus:
-    image: prom/prometheus:v3
+    image: prom/prometheus:v3.11.1
     ports:
       - "9090:9090"
     volumes:
@@ -18,5 +19,13 @@ services:
       - prometheus_data:/prometheus
     restart: unless-stopped
 
+  grafana:
+    image: grafana/grafana:12.4
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+
 volumes:
-  prometheus_data:
+  prometheus_data: {}
+  grafana_data: {}
