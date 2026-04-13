@@ -1,10 +1,8 @@
 # sysmetrics
 
-![Screenshot](assets/screenshot-dashboard.png)
-
-## Description
-
 Go Server that collects host CPU and RAM usage and displays them through Prometheus and Grafana.
+
+![Screenshot](assets/screenshot-dashboard.png)
 
 ### Diagram of the infrastructure:
 
