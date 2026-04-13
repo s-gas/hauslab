@@ -18,11 +18,11 @@ flowchart TB
     F[(Volume)]
 
     A <-->|3000| B
-    B <-->|9090| C
-    C <-->|1024| D
+    B --->|9090| C
+    C --->|1024| D
 
-    B <----> E
-    C <---> F
+    B ------ E
+    C ----- F
 ```
 
 ### Services
@@ -43,9 +43,9 @@ Two persistent volumes store Prometheus and Grafana data.
 
 ## How to run
 
-*Note: to run this service you need to have [Docker](https://www.docker.com/) and [Go](https://go.dev/) installed.*
+*Note: to run this service you need to have [Docker](https://www.docker.com/) installed.*
 
-Clone the hauslab repo:
+Clone the `hauslab` repo:
 
 ```bash
 git clone https://github.com/s-gas/hauslab.git
