@@ -9,7 +9,7 @@ System monitor that collects CPU and RAM usage and displays the metrics through 
 ### Services
 
 - **Go App**  
-  Runs natively on the machine and exposes the data at `/metrics`.
+  Runs in a Docker container and exposes the data at `/metrics`. 
 
 - **Prometheus**  
   Runs in a Docker container and scrapes the endpoint every 15 seconds and stores the data.
