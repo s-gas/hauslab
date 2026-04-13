@@ -11,9 +11,9 @@ System monitor that collects CPU and RAM usage and displays the metrics through 
 ```mermaid
 flowchart TB
     A([WWW])
-    B[GRAFANA]
-    C[PROMETHEUS]
-    D[SERVER]
+    B[Grafana]
+    C[Prometheus]
+    D[Go Server]
     E[(Volume)]
     F[(Volume)]
 
@@ -22,13 +22,12 @@ flowchart TB
     C <-->|1024| D
 
     B <----> E
-    C <--> E
-    D <--> F
+    C <--> F
 ```
 
 ### Services
 
-- **Go App**  
+- **Go Server**  
   Runs in a Docker container and exposes the data at `/metrics`.
   In order to read the metrics of the host machine, the host`/proc` directory is mounted into the container, overwriting its `/proc` directory.
 
