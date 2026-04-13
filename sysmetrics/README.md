@@ -1,4 +1,4 @@
-# traces
+# sysmetrics
 
 ![Screenshot](assets/screenshot-dashboard.png)
 
@@ -24,27 +24,25 @@ Two persistent volumes store Prometheus and Grafana data.
 
 ## How to run
 
-*Note: to run this project you need to have [Docker](https://www.docker.com/) and [Go](https://go.dev/) installed.*
+*Note: to run this service you need to have [Docker](https://www.docker.com/) and [Go](https://go.dev/) installed.*
 
-Clone this repository:
-
-```bash
-git clone https://github.com/s-gas/traces.git
-```
-
-Change to the project directory:
+Clone the hauslab repo:
 
 ```bash
-cd traces
+git clone https://github.com/s-gas/hauslab.git
 ```
 
-Run the app and the containers through the Makefile:
+Change to the service directory:
 
 ```bash
-make run
+cd hauslab/sysmetrics
 ```
 
-To stop the app press `Ctrl-C`.
+Run the containers:
+
+```bash
+docker compose up
+```
 
 To stop the containers:
 
