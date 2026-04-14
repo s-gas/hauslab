@@ -1,6 +1,8 @@
 # hauslab
 
-Where I experiment with Backend and DevOps concepts by developing and deploying services on self-hosted Linux hardware.
+This monorepo contains all the services that I deployed on my self-hosted Linux lab.
+
+It acts as a personal engineering lab where I can experiment by building and deploying backend services and by using DevOps tools in a real, self-managed infrastructure setup.
 
 ## Hardware
 Lenovo ThinkCentre M710Q Tiny
@@ -10,6 +12,7 @@ Lenovo ThinkCentre M710Q Tiny
 - **OS**: Debian
 
 ## Services
+
 - ### [sysmetrics](./sysmetrics)
 
   Server that exposes CPU and RAM usage.
