@@ -2,7 +2,7 @@
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 
-Go Server that collects host CPU and RAM usage through `gopsutil`.
+Server that collects host CPU and RAM usage through `gopsutil`.
 
 The server listens on port `1024` and exposes data at `/metrics` in Prometheus format for scraping.
 
