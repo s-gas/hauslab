@@ -4,8 +4,8 @@ build:
 	docker compose -f observability/docker-compose.yaml build
 
 up:
-	./sysmetrics/sysmetrics &
-	./svcmonitor/svcmonitor &
+	cd sysmetrics && ./sysmetrics &
+	cd svcmonitor && ./svcmonitor &
 	docker compose -f observability/docker-compose.yaml up -d
 
 down:
