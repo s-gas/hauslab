@@ -1,0 +1,70 @@
+# observability
+
+![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
+
+Containerized observability stack running Prometheus and Grafana via Docker Compose.
+
+## Services
+
+- **Prometheus**  
+  Metrics scraping and storage. Accessible at `http://localhost:9090`.
+
+- **Grafana**  
+  Metrics visualization. Accessible at `http://localhost:3000`.
+
+## How to run
+
+Create the file to store the admin password necessary to access the dashboard:
+
+```bash
+mkdir secrets
+printf '<password>' > secrets/grafana_password.txt
+```
+
+Run the containers:
+
+```bash
+docker compose up
+```
+
+To view the dashboard, navigate to `http://localhost:3000` and login as admin using the password stored in `secrets/grafana_password.txt`.
+
+## How to add scrape targets
+
+In `prometheus/prometheus.yml` add a new entry under `scrape_configs`:
+
+```bash
+  - job_name: "<scrape target>"
+    static_configs:
+      - targets: ["host.docker.internal:<port>"]
+```
+
+`host.docker.internal` is the DNS that Docker resolves to the host machine's IP address.
+
+In `docker-compose.yaml` make sure that the `prometheus` service has:
+
+```bash
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+```
+
+## How to stop
+
+To stop the containers:
+
+```bash
+docker compose down
+```
+
+## Troubleshooting
+
+A "wrong password" issue could be caused by the fact that the secret is set only on first boot. If the grafana volume already exists, it will be ignored. If the volume was created before the secret was added, you can login using `admin`/`admin`. Otherwise the solution is to delete the volumes.
+
+To wipe all the data in the volumes and restart:
+
+```bash
+docker compose down -v && docker compose up
+```
+
+Another possible reason for "wrong password" is having `\n` in the password. To avoid this, always use `printf`.

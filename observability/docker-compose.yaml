@@ -1,0 +1,33 @@
+name: sysmetrics
+
+services:
+  prometheus:
+    image: prom/prometheus:v3.11.1
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:12.4
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    secrets:
+      - grafana_password
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/grafana_password
+    restart: unless-stopped
+
+volumes:
+  prometheus_data: {}
+  grafana_data: {}
+
+secrets:
+  grafana_password:
+    file: secrets/grafana_password.txt

@@ -10,8 +10,8 @@ func getServices() map[string]service {
 	services := make(map[string]service)
 	services["sysmetrics"] = service{
 		name:   "sysmetrics",
-		port:   3000,
-		domain: "http://localhost:3000",
+		port:   1024,
+		domain: "http://localhost:1024/metrics",
 	}
 	return services
 }
