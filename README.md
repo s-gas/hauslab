@@ -18,7 +18,7 @@ Lenovo ThinkCentre M710Q Tiny
 
 - ### [svcmonitor](./svcmonitor)
 
-  Service monitor that sends HTTP requests to the services to check if they are running.
+  Monitor that sends HTTP requests to the services to check if they are running.
 
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 
