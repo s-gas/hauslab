@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"time"
@@ -10,21 +11,22 @@ import (
 func main() {
 	services := getServices()
 	logFileName := "svcmonitor.log"
-	logFile, err := os.OpenFile(logFileName, os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0644)
+	logFile, err := os.OpenFile(logFileName, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to open %s\n", logFileName)
 		os.Exit(1)
 	}
+	log.SetOutput(logFile)
 	for {
 		for _, s := range services {
 			resp, err := http.Get(s.domain)
 			if err != nil {
-				fmt.Fprintf(logFile, "%s is down\n", s.name)
+				log.Printf("%s is down\n", s.name)
 			}
 			if resp.StatusCode != 200 {
-				fmt.Fprintf(logFile, "%s is down\n", s.name)
+				log.Printf("%s is down\n", s.name)
 			} else {
-				fmt.Fprintf(logFile, "%s is up\n", s.name)
+				log.Printf("%s is up\n", s.name)
 			}
 			time.Sleep(1 * time.Second)
 		}
