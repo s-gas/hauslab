@@ -1,6 +1,6 @@
 # hauslab
 
-My homelab, the playground where I experiment with Backend and DevOps concepts by self-hosting services on a Linux machine. 
+Where I experiment with Backend and DevOps concepts by developing and deploying services on self-hosted Linux hardware.
 
 ## Hardware
 Lenovo ThinkCentre M710Q Tiny
