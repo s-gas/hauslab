@@ -12,7 +12,7 @@ Lenovo ThinkCentre M710Q Tiny
 ## Services
 - ### [sysmetrics](./sysmetrics)
 
-  Server that collects CPU and RAM usage and exposes them to `/metrics`.
+  Server that exposes CPU and RAM usage.
   
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 
