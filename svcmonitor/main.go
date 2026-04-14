@@ -28,8 +28,7 @@ func main() {
 			} else {
 				log.Printf("%s is up\n", s.name)
 			}
-			time.Sleep(1 * time.Second)
 		}
-		time.Sleep(5 * time.Minute)
+		time.Sleep(1 * time.Minute)
 	}
 }
