@@ -1,10 +1,15 @@
 # hauslab
 
-This monorepo contains all the services that I deployed on my self-hosted Linux lab.
+This repository contains the backend services I've built and deployed on my self-hosted Linux lab, which I use as a personal engineering environment to experiment with backend development and DevOps workflows in a real, self-managed infrastructure setup.
 
-It acts as a personal engineering lab where I can experiment by building and deploying backend services and by using DevOps tools in a real, self-managed infrastructure setup.
+The services that I develop myself are written in Go and they are integrated with DevOps tools such as Docker, Prometheus, and Grafana for deployment, containerization, and observability.
+
+## Goal
+
+Since I learn best by doing, the goal of this homelab is to improve my understanding of backend systems, Go, Linux and DevOps, while also having something real and practical that I could use every day.
 
 ## Hardware
+
 Lenovo ThinkCentre M710Q Tiny
 - **CPU**: Intel Core i3 3.2GHz
 - **Storage**: 256GB SSD
