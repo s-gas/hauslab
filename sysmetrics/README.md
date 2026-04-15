@@ -2,7 +2,7 @@
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 
-Server that collects host-level resources usage and exposes the data for external services.
+REST API that collects host-level resources usage and exposes the data for external services.
 
 ## Host-level resources
 
@@ -12,9 +12,13 @@ The server collects through `gopsutil` the following resources:
 
 ## Endpoint
 
-The server listens on port `1024`.
+The server listens for HTTP requests on port `1024`.
 
 Data is exposed at `/metrics`.
+
+```bash
+http://localhost:1024/metrics
+```
 
 ## Exposition format
 
