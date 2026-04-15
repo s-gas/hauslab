@@ -2,7 +2,7 @@
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 
-REST API that collects host-level resources usage and exposes the data for external services.
+Server that collects host-level resources usage and exposes the data for external services.
 
 ## Host-level resources
 
