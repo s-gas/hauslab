@@ -20,7 +20,7 @@ Lenovo ThinkCentre M710Q Tiny
 
 - ### [sysmetrics](./sysmetrics)
 
-  Server that exposes CPU and RAM usage.
+  REST API that exposes CPU and RAM usage.
   
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 
