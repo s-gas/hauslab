@@ -6,7 +6,7 @@ The services that I develop myself are written in Go and are integrated with Dev
 
 ## Goal
 
-Since I learn best by doing, the goal of this homelab is to improve my understanding of backend systems, Go, Linux and DevOps, while also having something real and practical that I could use every day.
+Since I learn best by doing, the goal of this homelab is to improve my understanding of backend systems, Go, Linux, and DevOps, while also having something real and practical that I could use every day.
 
 ## Hardware
 
