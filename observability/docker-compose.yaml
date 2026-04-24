@@ -8,16 +8,18 @@ services:
       - prometheus_data:/prometheus
     networks:
       - monitor
+      - sysmetrics-observability
     restart: unless-stopped
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
   grafana:
     image: grafana/grafana:12.4
+    ports:
+      - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
     networks:
       - monitor
+      - sysmetrics-observability
     secrets:
       - grafana_password
     environment:
@@ -34,4 +36,6 @@ secrets:
 
 networks:
   monitor:
+    external: true
+  sysmetrics-observability:
     external: true

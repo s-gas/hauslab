@@ -20,15 +20,17 @@ Lenovo ThinkCentre M710Q Tiny
 
 - ### [sysmetrics](./sysmetrics)
 
-  Server that exposes CPU and RAM usage.
+  Containerized server that exposes CPU and RAM usage.
   
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 - ### [svcmonitor](./svcmonitor)
 
-  Monitor that sends HTTP requests to the services to check if they are running.
+  Containerized monitor that sends HTTP requests to the services to check if they are running.
 
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 - ### [observability](./observability)
 

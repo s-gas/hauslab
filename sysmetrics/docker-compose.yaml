@@ -1,10 +1,15 @@
 services:
   sysmetrics:
     build: .
+    volumes:
+      - /proc:/proc
     networks:
       - monitor
+      - sysmetrics-observability
     restart: unless-stopped
 
 networks:
   monitor:
+    external: true
+  sysmetrics-observability:
     external: true

@@ -1,8 +1,9 @@
 # sysmetrics
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-Server that collects host-level resources usage and exposes the data for external services.
+Containerized server that collects host-level resources usage and exposes the data for external services.
 
 ## Host-level resources
 
@@ -10,15 +11,26 @@ The server collects through `gopsutil` the following resources:
 - CPU usage
 - RAM usage
 
+In order to read host-level resources, the host's `/proc` directory is bind mounted into the container.
+
 ## Endpoint
 
-The server listens for HTTP requests on port `1024`.
+This service does **not expose ports to the host system**.
 
-Data is exposed at `/metrics`.
+The HTTP server listens on port `1024` within a Docker network shared with an observability stack.
 
-```bash
-http://localhost:1024/metrics
+Metrics are exposed at:
+
 ```
+/metrics
+```
+
+Example internal endpoint:
+
+```
+http://sysmetrics:1024/metrics
+```
+
 
 ## Exposition format
 
@@ -37,6 +49,5 @@ ram_usage_percent 56.78
 ## How to run
 
 ```bash
-go build -o sysmetrics .
-./sysmetrics
+docker compose up -d
 ```

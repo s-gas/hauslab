@@ -8,7 +8,7 @@ Containerized observability stack running Prometheus and Grafana via Docker Comp
 ## Services
 
 - **Prometheus**  
-  Metrics scraping and storage. Accessible at `http://localhost:9090`.
+  Metrics scraping and storage.
 
 - **Grafana**  
   Metrics visualization. Accessible at `http://localhost:3000`.
@@ -35,18 +35,9 @@ To view the dashboard, navigate to `http://localhost:3000` and login as admin us
 In `prometheus/prometheus.yml` add a new entry under `scrape_configs`:
 
 ```bash
-  - job_name: "<scrape target>"
+  - job_name: "<scrape-target>"
     static_configs:
-      - targets: ["host.docker.internal:<port>"]
-```
-
-`host.docker.internal` is the DNS that Docker resolves to the host machine's IP address.
-
-In `docker-compose.yaml` make sure that the `prometheus` service has:
-
-```bash
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - targets: ["<service-name>:<port>"]
 ```
 
 ## How to stop
