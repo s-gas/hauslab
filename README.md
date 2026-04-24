@@ -22,6 +22,8 @@ Each service has its own `docker-compose.yaml`.
 
 In this way services can be developed, deployed, and restarted independently.
 
+Current services:
+
 - ### [sysmetrics](./sysmetrics)
 
   Containerized server that exposes CPU and RAM usage.
@@ -44,11 +46,17 @@ In this way services can be developed, deployed, and restarted independently.
   ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
   ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
 
-## Network
+## Networks
 
 Since every service has its own `docker-compose.yaml`, communication is enabled through external Docker networks.
 
 These networks are created by the `Makefile` before the containers are started.
 
-- ### monitor
-- ### sysmetrics-observability
+Current networks:
+- **monitor**:
+  
+  Allows **svcmonitor** to send request to all the other services
+
+- **sysmetrics-observability**:
+  
+  Allows communication between **sysmetrics** and the **observability** stack.
