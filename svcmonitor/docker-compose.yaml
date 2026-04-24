@@ -1,0 +1,8 @@
+name: svcmonitor
+
+services:
+  svcmonitor:
+    build: .
+    volumes:
+      - ./svcmonitor.log:/usr/src/app/svcmonitor.log
+    restart: unless-stopped

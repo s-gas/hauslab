@@ -22,8 +22,7 @@ func main() {
 			resp, err := http.Get(s.domain)
 			if err != nil {
 				log.Printf("%s is down\n", s.name)
-			}
-			if resp.StatusCode != 200 {
+			} else if resp.StatusCode != 200 {
 				log.Printf("%s is down\n", s.name)
 			} else {
 				log.Printf("%s is up\n", s.name)
