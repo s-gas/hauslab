@@ -1,23 +1,23 @@
-name: sysmetrics
+name: observability
 
 services:
   prometheus:
     image: prom/prometheus:v3.11.1
-    ports:
-      - "9090:9090"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
+    networks:
+      - monitor
     restart: unless-stopped
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
   grafana:
     image: grafana/grafana:12.4
-    ports:
-      - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
+    networks:
+      - monitor
     secrets:
       - grafana_password
     environment:
@@ -31,3 +31,7 @@ volumes:
 secrets:
   grafana_password:
     file: secrets/grafana_password.txt
+
+networks:
+  monitor:
+    external: true

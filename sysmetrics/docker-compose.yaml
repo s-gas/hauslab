@@ -1,8 +1,6 @@
 services:
-  svcmonitor:
+  sysmetrics:
     build: .
-    volumes:
-      - ./svcmonitor.log:/usr/src/app/svcmonitor.log
     networks:
       - monitor
     restart: unless-stopped
