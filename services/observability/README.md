@@ -11,7 +11,11 @@ Containerized observability stack running Prometheus and Grafana via Docker Comp
   Metrics scraping and storage.
 
 - **Grafana**  
-  Metrics visualization. Accessible at `http://localhost:3000`.
+  Metrics visualization.
+
+  Accessible at: 
+  - `http://localhost:3000` from the server itself
+  - `http://192.168.178.2:3000` from other devices on the same network
 
 ## How to run
 
@@ -28,7 +32,7 @@ Run the containers:
 docker compose up
 ```
 
-To view the dashboard, navigate to `http://localhost:3000` and login as admin using the password stored in `secrets/grafana_password.txt`.
+To view the dashboard, navigate to `http://localhost:3000` / `http://192.168.178.2:3000` and login as `admin` using the password stored in `secrets/grafana_password.txt`.
 
 ## How to add scrape targets
 
