@@ -1,6 +1,6 @@
 # hauslab
 
-This repository contains all the services I've built and deployed on my self-hosted Linux lab, which I use as a personal engineering environment to experiment with backend development and DevOps workflows in a real, self-managed infrastructure setup.
+This repository contains all the services running on my self-hosted Linux lab. I use it as a personal engineering environment to experiment with backend development and DevOps workflows in a real, self-managed infrastructure setup.
 
 The services that I develop myself are written in Go and are integrated with DevOps tools such as Docker, Prometheus, and Grafana for deployment, containerization, and observability.
 
