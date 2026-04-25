@@ -11,7 +11,7 @@ Since I learn best by doing, the goal of this homelab is to improve my understan
 ## Hardware
 
 Lenovo ThinkCentre M710Q Tiny
-- **CPU**: Intel Core i3 3.2GHz
+- **CPU**: Intel Core i5 2.4GHz
 - **Storage**: 256GB SSD
 - **RAM**: 8GB
 - **OS**: Debian
