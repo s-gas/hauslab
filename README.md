@@ -70,3 +70,12 @@ The homelab uses a static IP address:
 ```
 
 In this way it is easily accessible from other devices connected to the same network.
+
+## Host Ports
+
+The following ports are exposed on the host machine:
+
+| Port | Protocol | Service |
+|------|----------|---------|
+| 22   |  TCP     | SSH     |
+| 3000 |  TCP     | Grafana |
