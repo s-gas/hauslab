@@ -3,6 +3,8 @@ services:
     build: .
     volumes:
       - /proc:/proc
+    environment:
+      - TZ=Europe/Berlin
     networks:
       - monitor
       - sysmetrics-observability

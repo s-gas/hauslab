@@ -1,6 +1,8 @@
 services:
   gasbot:
     build: .
+    environment:
+      - TZ=Europe/Berlin
     secrets:
       - telegram_token
     restart: unless-stopped
