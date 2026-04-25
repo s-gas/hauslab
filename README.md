@@ -65,6 +65,8 @@ Current networks:
 
 The homelab uses a static IP address:
 
-`192.168.178.2`
+```bash
+192.168.178.2
+```
 
 In this way it is easily accessible from other devices connected to the same network.
