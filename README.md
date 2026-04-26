@@ -78,4 +78,4 @@ The following ports are exposed on the host machine:
 | Port | Protocol | Service |
 |------|----------|---------|
 | 22   |  TCP     | SSH     |
-| 3000 |  TCP     | Grafana |
+| 1024 |  TCP     | Grafana |
