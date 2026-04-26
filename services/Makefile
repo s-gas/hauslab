@@ -1,9 +1,9 @@
 up:
 	docker network create monitor || true
 	docker network create sysmetrics-observability || true
-	docker compose -f observability/docker-compose.yaml up -d --pull always
-	docker compose -f svcmonitor/docker-compose.yaml up -d --build --force-recreate
-	docker compose -f sysmetrics/docker-compose.yaml up -d --build --force-recreate
+	docker compose -f observability/docker-compose.yaml up -d
+	docker compose -f svcmonitor/docker-compose.yaml up -d --build
+	docker compose -f sysmetrics/docker-compose.yaml up -d --build
 
 down:
 	docker compose -f observability/docker-compose.yaml down
