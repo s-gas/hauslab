@@ -14,8 +14,8 @@ Containerized observability stack running Prometheus and Grafana via Docker Comp
   Metrics visualization.
 
   Accessible at: 
-  - `http://localhost:3000` from the server itself
-  - `http://192.168.178.2:3000` from other devices on the same network
+  - `http://localhost:1024` from the server itself
+  - `http://192.168.178.2:1024` from other devices on the same network
 
 ## How to run
 
