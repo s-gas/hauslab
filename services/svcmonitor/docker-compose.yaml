@@ -3,6 +3,8 @@ services:
     build: .
     volumes:
       - ./svcmonitor.log:/usr/src/app/svcmonitor.log
+    environment:
+      - TZ=Europe/Berlin
     networks:
       - monitor
     restart: unless-stopped
