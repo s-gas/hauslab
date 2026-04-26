@@ -71,6 +71,14 @@ The homelab uses a static IP address:
 
 In this way it is easily accessible from other devices connected to the same network.
 
+The following entry has been added to `etc/hosts`:
+
+```bash
+192.168.178.2 	hauslab
+```
+
+In this way the hostname `hauslab` can be used instead of the IP address.
+
 ## Host Ports
 
 The following ports are exposed on the host machine:
