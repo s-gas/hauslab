@@ -1,6 +1,6 @@
 services:
   adguardhome:
-    image: adguard/adguardhome
+    image: adguard/adguardhome:v0.107.74
     ports:
       - 53:53/tcp # DNS
       - 53:53/udp # DNS
