@@ -4,7 +4,7 @@ services:
     ports:
       - 53:53/tcp # DNS
       - 53:53/udp # DNS
-      - 1025:80/tcp # http web interface
+      - 1025:80/tcp # web interface
       - 1026:3000/tcp # initial setup
     volumes:
       - config:/opt/adguardhome/conf

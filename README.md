@@ -40,11 +40,17 @@ Current services:
 
 - ### [observability](./observability)
 
-  Containerized observability stack running Prometheus and Grafana via Docker Compose.
+  Containerized observability stack running Prometheus and Grafana.
   
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
   ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
   ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
+
+- ### [adguard] (./adguard)
+
+  Containerized DNS server with ad blocking.
+
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 ## Networks
 
