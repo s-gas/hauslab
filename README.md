@@ -46,7 +46,7 @@ Current services:
   ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
   ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
 
-- ### [adguard] (./adguard)
+- ### [adguard](./adguard)
 
   Containerized DNS server with ad blocking.
 
