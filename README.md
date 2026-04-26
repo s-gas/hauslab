@@ -24,21 +24,21 @@ In this way services can be developed, deployed, and restarted independently.
 
 Current services:
 
-- ### [sysmetrics](./sysmetrics)
+- ### [sysmetrics](./services/sysmetrics)
 
   Containerized server that exposes CPU and RAM usage.
   
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-- ### [svcmonitor](./svcmonitor)
+- ### [svcmonitor](./services/svcmonitor)
 
   Containerized monitor that sends HTTP requests to the services to check if they are running.
 
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-- ### [observability](./observability)
+- ### [observability](./services/observability)
 
   Containerized observability stack running Prometheus and Grafana.
   
@@ -46,7 +46,7 @@ Current services:
   ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
   ![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat&logo=grafana&logoColor=white)
 
-- ### [adguard](./adguard)
+- ### [adguard](./services/adguard)
 
   Containerized DNS server with ad blocking.
 
