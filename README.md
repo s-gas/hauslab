@@ -75,7 +75,11 @@ In this way it is easily accessible from other devices connected to the same net
 
 The following ports are exposed on the host machine:
 
-| Port | Protocol | Service |
-|------|----------|---------|
-| 22   |  TCP     | SSH     |
-| 1024 |  TCP     | Grafana |
+| Port | Protocol | Service        |
+|------|----------|----------------|
+| 22   |  TCP     | SSH            |
+| 53   |  TCP     | DNS (AdGuard)  |
+| 53   |  UDP     | DNS (AdGuard)  |
+| 1024 |  TCP     | Grafana        |
+| 1025 |  TCP     | AdGuard Web    |
+| 1026 |  TCP     | AdGuard Setup  |
