@@ -49,4 +49,8 @@ docker compose down
 
 ## Troubleshooting
 
+### Log file
+
 Make sure `svcmonitor.log` exists on the host before starting the container. If the file is missing, Docker will create it as a directory, causing the bind mount to fail.
+
+For now, I don't have a rotating feature for the log file, which means that with time it will get very big. The solution for now is to stop the container, delete the log file and create a new one.

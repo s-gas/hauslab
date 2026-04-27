@@ -51,3 +51,9 @@ ram_usage_percent 56.78
 ```bash
 docker compose up -d
 ```
+
+## How to stop
+
+```bash
+docker compose down
+```
