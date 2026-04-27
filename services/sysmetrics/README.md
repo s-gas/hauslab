@@ -17,7 +17,7 @@ In order to read host-level resources, the host's `/proc` directory is bind moun
 
 This service does **not expose ports to the host system**.
 
-The HTTP server listens on port `1024` within a Docker network shared with an observability stack.
+The HTTP server listens on port `1024` and is reachable by the **Observability** stack through an external Docker network called `sysmetrics-observability`.
 
 Metrics are exposed at:
 

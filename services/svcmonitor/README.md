@@ -40,3 +40,13 @@ Start the container:
 ```bash
 docker compose up -d
 ```
+
+## How to stop
+
+```bash
+docker compose down
+```
+
+## Troubleshooting
+
+Make sure `svcmonitor.log` exists on the host before starting the container. If the file is missing, Docker will create it as a directory, causing the bind mount to fail.

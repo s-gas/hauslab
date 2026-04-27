@@ -13,10 +13,6 @@ Containerized observability stack running Prometheus and Grafana via Docker Comp
 - **Grafana**  
   Metrics visualization.
 
-  Accessible at: 
-  - `http://localhost:1024` from the server itself
-  - `http://192.168.178.2:1024` from other devices on the same network
-
 ## How to run
 
 Create the file to store the admin password necessary to access the dashboard:
@@ -32,13 +28,21 @@ Run the containers:
 docker compose up
 ```
 
-To view the dashboard, navigate to `http://localhost:3000` / `http://192.168.178.2:3000` and login as `admin` using the password stored in `secrets/grafana_password.txt`.
+## Grafana Dashboard
+
+```bash
+http://hauslab:1024
+```
+
+`hauslab` is a hostname mapped to `192.168.178.2` in `/etc/hosts`.
+
+Login as `admin` using the password stored in `secrets/grafana_password.txt`.
 
 ## How to add scrape targets
 
 In `prometheus/prometheus.yml` add a new entry under `scrape_configs`:
 
-```bash
+```yaml
   - job_name: "<scrape-target>"
     static_configs:
       - targets: ["<service-name>:<port>"]
@@ -54,6 +58,8 @@ docker compose down
 
 ## Troubleshooting
 
+### Wrong password
+
 A "wrong password" issue could be caused by the fact that the secret is set only on first boot. If the grafana volume already exists, it will be ignored. If the volume was created before the secret was added, you can login using `admin`/`admin`. Otherwise the solution is to delete the volumes.
 
 To wipe all the data in the volumes and restart:
@@ -63,3 +69,17 @@ docker compose down -v && docker compose up
 ```
 
 Another possible reason for "wrong password" is having `\n` in the password. To avoid this, always use `printf`.
+
+### Container logs
+
+To check the container logs, first find the container ids:
+
+```bash
+docker ps
+```
+
+Then check its logs:
+
+```bash
+docker logs <container id>
+```
