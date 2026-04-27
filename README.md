@@ -67,6 +67,7 @@ Current networks:
   
   Allows communication between **sysmetrics** and the **observability** stack.
 
+
 ## IP Address
 
 The homelab uses a static IP address:
@@ -85,7 +86,6 @@ The following entry has been added to `etc/hosts`:
 
 In this way the hostname `hauslab` can be used instead of the IP address.
 
-
 ## Host Ports
 
 The following ports are exposed on the host machine:
@@ -98,3 +98,11 @@ The following ports are exposed on the host machine:
 | 1024 |  TCP     | Grafana        |
 | 1025 |  TCP     | AdGuard Web    |
 | 1026 |  TCP     | AdGuard Setup  |
+
+## SSH
+
+The homelab runs an SSH server, which means it can be accessed by any device in the local network:
+
+```bash
+ssh <username>@hauslab
+```

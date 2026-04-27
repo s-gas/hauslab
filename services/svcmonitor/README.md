@@ -9,7 +9,7 @@ The health is checked by sending HTTP requests and logging their status.
 
 ## Behaviour
 
-The program runs continously in a loop with an interval of 1 minute.
+The program runs continuosly in a loop with an interval of 1 minute.
 
 On each iteration, the services defined in a static in-memory map are checked via an HTTP request.
 
