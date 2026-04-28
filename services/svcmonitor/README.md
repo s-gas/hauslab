@@ -14,8 +14,8 @@ The program runs continuosly in a loop with an interval of 1 minute.
 On each iteration, the services defined in a static in-memory map are checked via an HTTP request.
 
 The services can be considered:
-- `up`: the HTTP request succeeds and returns status code `200`
-- `down`: the HTTP request fails or returns a status code different than `200`
+- `UP`: the HTTP request succeeds and returns status code `200`
+- `DOWN`: the HTTP request fails or returns a status code different than `200`
 
 ## Logging
 
@@ -24,7 +24,7 @@ The logs are written in `svcmonitor.log`, bind mounted from the host into the co
 Each entry follows the following format:
 
 ```bash
-YYYY/MM/DD HH:MM:SS <service> is up|down
+YYYY/MM/DD HH:MM:SS <service> UP|DOWN
 ```
 
 ## How to run

@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net/http"
 	"os"
 	"time"
 )
@@ -16,18 +14,8 @@ func main() {
 		fmt.Fprintf(os.Stderr, "failed to open %s\n", logFileName)
 		os.Exit(1)
 	}
-	log.SetOutput(logFile)
 	for {
-		for _, s := range services {
-			resp, err := http.Get(s.domain)
-			if err != nil {
-				log.Printf("%s is down\n", s.name)
-			} else if resp.StatusCode != 200 {
-				log.Printf("%s is down\n", s.name)
-			} else {
-				log.Printf("%s is up\n", s.name)
-			}
-		}
+		checkServices(services, logFile)
 		time.Sleep(1 * time.Minute)
 	}
 }
