@@ -3,23 +3,47 @@
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-Containerized monitoring tool that continuously checks the health of the services running in the homelab.
+Containerized monitoring tool that continuously checks the status of the services running in the homelab, which are exposed for external services.
 
-The health is checked by sending HTTP requests and logging their status.
+## Concurrency
 
-## Behaviour
+The program uses two concurrent patterns:
 
-The program runs continuosly in a loop with an interval of 1 minute.
+- HTTP Server: Exposes the current status of all tracked services.
 
-On each iteration, the services defined in a static in-memory map are checked via an HTTP request.
+- Background Loop: A separate `goroutine` runs an infinite loop with a 30-seconds interval, checking services and updating their status.
+
+Data races are prevented by using *mutexes*.
+
+## Status
 
 The services can be considered:
 - `UP`: the HTTP request succeeds and returns status code `200`
 - `DOWN`: the HTTP request fails or returns a status code different than `200`
 
-## Logging
+## Endpoint
 
-The logs are written in `svcmonitor.log`, bind mounted from the host into the container.
+This service does **not expose ports to the host system**.
+
+The HTTP server listens on port `1025` and is reachable by the **Observability** stack through an external Docker network called `svcmonitor-observability`.
+
+Metrics are exposed at:
+
+```
+/metrics
+```
+
+## Exposition format
+
+The data is exposed in the Prometheus Text Format, including the metadata:
+
+```bash
+# HELP service_up Status of the service (1 for UP, 0 for DOWN)
+# TYPE service_up gauge
+service_up{service="grafana"} 1
+```
+
+## Logging
 
 Each entry follows the following format:
 
@@ -28,12 +52,6 @@ YYYY/MM/DD HH:MM:SS <service> UP|DOWN
 ```
 
 ## How to run
-
-Before running, make sure `svcmonitor.log` exists:
-
-```bash
-touch svcmonitor.log
-```
 
 Start the container:
 
@@ -49,8 +67,16 @@ docker compose down
 
 ## Troubleshooting
 
-### Log file
+### Container logs
 
-Make sure `svcmonitor.log` exists on the host before starting the container. If the file is missing, Docker will create it as a directory, causing the bind mount to fail.
+To check the container logs, first find the container ids:
 
-For now, I don't have a rotating feature for the log file, which means that with time it will get very big. The solution for now is to stop the container, delete the log file and create a new one.
+```bash
+docker ps
+```
+
+Then check its logs:
+
+```bash
+docker logs <container id>
+```

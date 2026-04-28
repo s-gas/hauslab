@@ -6,7 +6,7 @@ import (
 )
 
 func serveMetrics(w http.ResponseWriter, services map[string]*service) {
-	fmt.Fprintf(w, "# HELP UP (1) or DOWN (0)\n")
+	fmt.Fprintf(w, "# HELP service_up Status of the service (1 for UP, 0 for DOWN)\n")
 	fmt.Fprintf(w, "# TYPE service_up gauge\n")
 	for _, s := range services {
 		s.mutex.Lock()

@@ -25,13 +25,6 @@ Metrics are exposed at:
 /metrics
 ```
 
-Example internal endpoint:
-
-```
-http://sysmetrics:1024/metrics
-```
-
-
 ## Exposition format
 
 The data is exposed in the Prometheus Text Format, including the metadata:

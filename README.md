@@ -33,7 +33,7 @@ Current services:
 
 - ### [svcmonitor](./services/svcmonitor)
 
-  Containerized monitor that sends HTTP requests to the services to check if they are running.
+  Containerized monitor that checks the status of the services and exposes them.
 
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
@@ -66,6 +66,10 @@ Current networks:
 - **sysmetrics-observability**:
   
   Allows communication between **sysmetrics** and the **observability** stack.
+
+- **svcmonitor-observability**:
+  
+  Allows communication between **svcmonitor** and the **observability** stack.
 
 
 ## IP Address

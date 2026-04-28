@@ -9,6 +9,7 @@ services:
     networks:
       - monitor
       - sysmetrics-observability
+      - svcmonitor-observability
     restart: unless-stopped
 
   grafana:
@@ -20,6 +21,7 @@ services:
     networks:
       - monitor
       - sysmetrics-observability
+      - svcmonitor-observability
     secrets:
       - grafana_password
     environment:
@@ -38,4 +40,6 @@ networks:
   monitor:
     external: true
   sysmetrics-observability:
+    external: true
+  svcmonitor-observability:
     external: true
