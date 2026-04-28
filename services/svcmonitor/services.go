@@ -13,25 +13,26 @@ type service struct {
 	statusLog string
 	port      int
 	status    int
+	mutex     sync.Mutex
 }
 
-func getServices() map[string]service {
-	services := make(map[string]service)
-	services["sysmetrics"] = service{
+func getServices() map[string]*service {
+	services := make(map[string]*service)
+	services["sysmetrics"] = &service{
 		name:      "sysmetrics",
 		port:      1024,
 		domain:    "http://sysmetrics:1024/metrics",
 		status:    0,
 		statusLog: "DOWN",
 	}
-	services["prometheus"] = service{
+	services["prometheus"] = &service{
 		name:      "prometheus",
 		port:      9090,
 		domain:    "http://prometheus:9090",
 		status:    0,
 		statusLog: "DOWN",
 	}
-	services["grafana"] = service{
+	services["grafana"] = &service{
 		name:      "grafana",
 		port:      3000,
 		domain:    "http://grafana:3000",
@@ -41,10 +42,10 @@ func getServices() map[string]service {
 	return services
 }
 
-func checkServices(services map[string]service, mutex *sync.Mutex) {
+func checkServices(services map[string]*service) {
 	for {
-		mutex.Lock()
 		for _, s := range services {
+			s.mutex.Lock()
 			resp, err := http.Get(s.domain)
 			if err != nil || resp.StatusCode != 200 {
 				s.status = 0
@@ -54,8 +55,8 @@ func checkServices(services map[string]service, mutex *sync.Mutex) {
 				s.statusLog = "UP"
 			}
 			log.Printf("%s %s\n", s.name, s.statusLog)
+			s.mutex.Unlock()
 		}
-		mutex.Unlock()
 		time.Sleep(30 * time.Second)
 	}
 }

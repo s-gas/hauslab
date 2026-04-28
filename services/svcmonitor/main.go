@@ -4,20 +4,17 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"sync"
 )
 
 func main() {
 	services := getServices()
 
-	var mutex sync.Mutex
-
 	endpoint := "/metrics"
 	http.HandleFunc("/metrics", func(w http.ResponseWriter, r *http.Request) {
-		serveMetrics(w, &mutex, services)
+		serveMetrics(w, services)
 	})
 
-	go checkServices(services, &mutex)
+	go checkServices(services)
 
 	port := 1024
 	addr := fmt.Sprintf(":%d", port)
