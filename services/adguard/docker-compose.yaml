@@ -9,7 +9,13 @@ services:
     volumes:
       - config:/opt/adguardhome/conf
       - work:/opt/adguardhome/work
+    networks:
+      - monitor
 
 volumes:
   config:
   work:
+
+networks:
+  monitor:
+    external: true

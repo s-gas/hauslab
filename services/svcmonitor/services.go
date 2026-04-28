@@ -36,6 +36,12 @@ func getServices() map[string]*service {
 		domain: "http://grafana:3000",
 		status: 0,
 	}
+	services["adguard"] = &service{
+		name:   "adguard",
+		port:   80,
+		domain: "http://adguard:80",
+		status: 0,
+	}
 	return services
 }
 

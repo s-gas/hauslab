@@ -16,7 +16,7 @@ func main() {
 
 	go checkServices(services)
 
-	port := 1024
+	port := 1025
 	addr := fmt.Sprintf(":%d", port)
 	fmt.Printf("svcmonitor listening on %s%s\n", addr, endpoint)
 	err := http.ListenAndServe(addr, nil)

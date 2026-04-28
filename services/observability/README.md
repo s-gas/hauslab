@@ -36,6 +36,8 @@ http://hauslab:1024
 
 `hauslab` is a hostname mapped to `192.168.178.2` in `/etc/hosts`.
 
+`192.168.178.2` is the static IP address of the homelab.
+
 Login as `admin` using the password stored in `secrets/grafana_password.txt`.
 
 ## How to add scrape targets
