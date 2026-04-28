@@ -10,7 +10,7 @@ func main() {
 	services := getServices()
 
 	endpoint := "/metrics"
-	http.HandleFunc("/metrics", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc(endpoint, func(w http.ResponseWriter, r *http.Request) {
 		serveMetrics(w, services)
 	})
 

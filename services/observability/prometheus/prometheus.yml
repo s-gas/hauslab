@@ -5,3 +5,6 @@ scrape_configs:
   - job_name: "sysmetrics"
     static_configs:
       - targets: ["sysmetrics:1024"]
+  - job_name: "svcmonitor"
+    static_configs:
+      - targets: ["svcmonitor:1025"]

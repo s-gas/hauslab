@@ -3,6 +3,8 @@ name: svcmonitor
 services:
   svcmonitor:
     build: .
+    ports:
+      - "1027:1025"
     environment:
       - TZ=Europe/Berlin
     networks:

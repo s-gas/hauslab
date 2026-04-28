@@ -48,8 +48,8 @@ func getServices() map[string]*service {
 func checkServices(services map[string]*service) {
 	for {
 		for _, s := range services {
-			s.mutex.Lock()
 			resp, err := http.Get(s.domain)
+			s.mutex.Lock()
 			if err != nil || resp.StatusCode != 200 {
 				s.status = 0
 				log.Printf("%s DOWN\n", s.name)
