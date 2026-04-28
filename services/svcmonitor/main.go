@@ -2,20 +2,28 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"time"
+	"log"
+	"net/http"
+	"sync"
 )
 
 func main() {
 	services := getServices()
-	logFileName := "svcmonitor.log"
-	logFile, err := os.OpenFile(logFileName, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
+
+	var mutex sync.Mutex
+
+	endpoint := "/metrics"
+	http.HandleFunc("/metrics", func(w http.ResponseWriter, r *http.Request) {
+		serveMetrics(w, &mutex, services)
+	})
+
+	go checkServices(services, &mutex)
+
+	port := 1024
+	addr := fmt.Sprintf(":%d", port)
+	fmt.Printf("svcmonitor listening on %s%s\n", addr, endpoint)
+	err := http.ListenAndServe(addr, nil)
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "failed to open %s\n", logFileName)
-		os.Exit(1)
-	}
-	for {
-		checkServices(services, logFile)
-		time.Sleep(1 * time.Minute)
+		log.Fatal(err)
 	}
 }
