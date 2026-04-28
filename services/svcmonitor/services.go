@@ -48,18 +48,24 @@ func getServices() map[string]*service {
 func checkServices(services map[string]*service) {
 	for {
 		for _, s := range services {
-			resp, err := http.Get(s.domain)
-			s.mutex.Lock()
-			if err != nil || resp.StatusCode != 200 {
-				s.status = 0
-				log.Printf("%s DOWN\n", s.name)
-			} else {
-				resp.Body.Close()
-				s.status = 1
-				log.Printf("%s UP\n", s.name)
-			}
-			s.mutex.Unlock()
+			checkService(s)
 		}
 		time.Sleep(30 * time.Second)
 	}
+}
+
+func checkService(s *service) {
+	resp, err := http.Get(s.domain)
+	if err != nil {
+		defer resp.Body.Close()
+	}
+	s.mutex.Lock()
+	if err != nil || resp.StatusCode != 200 {
+		s.status = 0
+		log.Printf("%s DOWN\n", s.name)
+	} else {
+		s.status = 1
+		log.Printf("%s UP\n", s.name)
+	}
+	s.mutex.Unlock()
 }
