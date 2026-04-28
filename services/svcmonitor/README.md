@@ -11,9 +11,9 @@ The program uses two concurrent patterns:
 
 - HTTP Server: Exposes the current status of all tracked services.
 
-- Background Loop: A separate `goroutine` runs an infinite loop with a 30-seconds interval, checking services and updating their status.
+- Background Loop: `goroutine` that runs an infinite loop with a 30-seconds interval, checking services and updating their status.
 
-Data races are prevented by using *mutexes*.
+Data races are prevented by using **mutexes**.
 
 ## Status
 
