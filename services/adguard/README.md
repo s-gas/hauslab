@@ -1,5 +1,7 @@
 # adguard
 
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+
 Docker container running AdGuard Home, a network ad-blocking DNS server.
 
 ## Web UI
