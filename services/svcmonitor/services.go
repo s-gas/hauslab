@@ -56,7 +56,7 @@ func checkServices(services map[string]*service) {
 
 func checkService(s *service) {
 	resp, err := http.Get(s.domain)
-	if err != nil {
+	if err == nil {
 		defer resp.Body.Close()
 	}
 	s.mutex.Lock()
