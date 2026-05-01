@@ -1,12 +1,12 @@
 #!/bin/bash
 
+cd hauslab
+git fetch
+
 LOCAL=$(git log --oneline | head -1)
 REMOTE=$(git log --oneline origin/main | head -1)
 
-cd ~/hauslab
-git fetch
-
 if [[ $LOCAL != $REMOTE ]]; then
     git pull
-    cd ../services && make up
+    cd services && make up
 fi
