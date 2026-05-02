@@ -1,9 +1,7 @@
 #!/bin/bash
 
-cd ~/code/hauslab
+cd /home/s-gas/hauslab
 git fetch
-
-echo "cron job running"
 
 LOCAL=$(git log --oneline | head -1)
 REMOTE=$(git log --oneline origin/main | head -1)
