@@ -75,7 +75,7 @@ Current networks:
 
 - ### [pull-and-run](./scripts/pull-and-run)
   
-  Cron job that pulls the latest commit and redeploy the services.
+  Automated script that pulls the latest commit and redeploys all services.
 
   ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
 
