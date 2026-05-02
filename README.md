@@ -71,6 +71,14 @@ Current networks:
   
   Allows communication between **svcmonitor** and the **observability** stack.
 
+## Scripts
+
+- ### [pull-and-run](./scripts/pull-and-run)
+  
+  Cron job that pulls the latest commit and redeploy the services.
+
+  ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
+
 
 ## IP Address
 
