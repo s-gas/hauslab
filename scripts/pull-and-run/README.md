@@ -2,7 +2,7 @@
 
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
 
-Script that pulls the latest commit and redeploys the services by running the `Makefile` defined in `~/hauslab/services`.
+Automated script that pulls the latest commit and redeploys the services by running the `Makefile` defined in `~/hauslab/services`.
 
 ## Cron job
 
