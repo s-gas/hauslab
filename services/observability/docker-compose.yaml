@@ -21,6 +21,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     networks:
+      - proxy
       - monitor
       - sysmetrics-observability
       - svcmonitor-observability
@@ -39,6 +40,8 @@ secrets:
     file: secrets/grafana_password.txt
 
 networks:
+  proxy:
+    external: true
   monitor:
     external: true
   sysmetrics-observability:
