@@ -6,7 +6,7 @@ services:
     container_name: nginx
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./index.html:/usr/share/nginx/html/index.html
+      - ./www/index.html:/usr/share/nginx/html/index.html
     ports:
       - "80:80"
     networks:
