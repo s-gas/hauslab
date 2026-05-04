@@ -77,6 +77,10 @@ Current networks:
   
   Allows communication between **svcmonitor** and the **observability** stack.
 
+- **proxy**:
+
+  Allows **nginx** to route requests to all services accessible via subdomain.
+
 ## Scripts
 
 - ### [pull-and-run](./scripts/pull-and-run)
@@ -105,9 +109,9 @@ All hostnames points to the same IP and are routed to the correct service by the
 The following entries need to be added to `etc/hosts` on every device that needs to access the services:
 
 ```bash
+192.168.178.2   hauslab
 192.168.178.2   grafana.hauslab
 192.168.178.2   prometheus.hauslab
-192.168.178.2   adguard.hauslab
 ```
 
 ## Host Ports
@@ -120,6 +124,8 @@ The following ports are exposed on the host machine:
 | 53   |  TCP     | DNS (AdGuard)  |
 | 53   |  UDP     | DNS (AdGuard)  |
 | 80   |  TCP     | Nginx          |
+| 1024 |  TCP     | AdGuard Web UI |
+| 1025 |  TCP     | AdGuard Setup  |
 
 ## SSH
 

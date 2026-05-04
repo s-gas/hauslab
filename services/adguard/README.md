@@ -7,7 +7,7 @@ Docker container running AdGuard Home, a network ad-blocking DNS server.
 ## Web UI
 
 ```bash
-http://hauslab:1025
+http://hauslab:1024
 ```
 
 `hauslab` is a hostname mapped to `192.168.178.2` in `/etc/hosts`.

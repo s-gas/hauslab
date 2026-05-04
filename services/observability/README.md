@@ -29,17 +29,28 @@ Run the containers:
 docker compose up
 ```
 
-## Grafana Dashboard
+## Grafana Web UI
 
 ```bash
-http://hauslab:1024
+http://grafana.hauslab
 ```
 
-`hauslab` is a hostname mapped to `192.168.178.2` in `/etc/hosts`.
+`grafana.hauslab` is a hostname mapped to `192.168.178.2` in `/etc/hosts`.
 
-`192.168.178.2` is the static IP address of the homelab.
+The request is routed to Grafana by a reverse proxy based on the hostname.
 
 Login as `admin` using the password stored in `secrets/grafana_password.txt`.
+
+
+## Prometheus Web UI
+
+```bash
+http://prometheus.hauslab
+```
+
+`prometheus.hauslab` is a hostname mapped to `192.168.178.2` in `/etc/hosts`.
+
+The request is routed to Prometheus by a reverse proxy based on the hostname.
 
 ## How to add scrape targets
 
