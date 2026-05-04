@@ -29,7 +29,7 @@ Metrics are exposed at:
 
 The data is exposed in the Prometheus Text Format, including the metadata:
 
-```bash
+```yaml
 # HELP cpu_usage_percent Current CPU usage as a percentage
 # TYPE cpu_usage_percent gauge
 cpu_usage_percent 12.34

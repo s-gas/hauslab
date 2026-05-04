@@ -5,6 +5,22 @@
 
 Containerized monitoring tool that continuously checks the status of the services running in the homelab, which are exposed for external services.
 
+## Services
+
+The services to be checked are parsed from `services.yaml`, which has the following format:
+
+```yaml
+services:
+  <service_name>:
+    port: <port_number>
+    domain: <url>
+  <service_name>:
+    port: <port_number>
+    domain: <url>
+```
+
+To add a new service, add a new entry to `services.yaml`.
+
 ## Concurrency
 
 The program uses two concurrent patterns:
@@ -37,7 +53,7 @@ Metrics are exposed at:
 
 The data is exposed in the Prometheus Text Format, including the metadata:
 
-```bash
+```yaml
 # HELP service_up Status of the service (1 for UP, 0 for DOWN)
 # TYPE service_up gauge
 service_up{service="grafana"} 1
@@ -66,6 +82,10 @@ docker compose down
 ```
 
 ## Troubleshooting
+
+### Ports
+
+The program uses an external Docker network to communicate with the other services, make sure to use the internal port in `services.yaml`.
 
 ### Container logs
 
