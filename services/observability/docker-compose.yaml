@@ -8,6 +8,7 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
     networks:
+      - proxy
       - monitor
       - sysmetrics-observability
       - svcmonitor-observability
