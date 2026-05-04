@@ -8,9 +8,9 @@ import (
 )
 
 type Service struct {
-	domain    string `yaml:"domain"`
+	Domain    string `yaml:"domain"`
 	statusLog string
-	port      int `yaml:"port"`
+	Port      int `yaml:"port"`
 	status    int
 	mutex     sync.Mutex
 }
@@ -25,8 +25,8 @@ func checkServices(services map[string]*Service) {
 }
 
 func checkService(name string, s *Service) {
-	resp, err := http.Get(s.domain)
-	log.Println(s.domain)
+	resp, err := http.Get(s.Domain)
+	log.Println(s.Domain)
 	if err == nil {
 		defer resp.Body.Close()
 	}
