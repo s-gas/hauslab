@@ -5,7 +5,7 @@ services:
     build: .
     container_name: svcmonitor
     volumes:
-      - ./services.yaml:./services.yaml
+      - ./services.yaml:/usr/src/app/services.yaml
     environment:
       - TZ=Europe/Berlin
     networks:
