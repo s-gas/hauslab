@@ -3,6 +3,7 @@ name: observability
 services:
   prometheus:
     image: prom/prometheus:v3.11.1
+    container_name: prometheus
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
@@ -14,6 +15,7 @@ services:
 
   grafana:
     image: grafana/grafana:12.4
+    container_name: grafana
     ports:
       - "1024:3000"
     volumes:

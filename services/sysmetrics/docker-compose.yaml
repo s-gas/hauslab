@@ -3,6 +3,7 @@ name: sysmetrics
 services:
   sysmetrics:
     build: .
+    container_name: sysmetrics
     volumes:
       - /proc:/proc
     environment:
