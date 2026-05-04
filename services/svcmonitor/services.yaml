@@ -1,16 +1,16 @@
 services:
   adguard:
     port: 80
-    domain: "http://adguard:80"
+    url: "http://adguard:80"
   nginx:
     port: 80
-    domain: "http://nginx:80"
+    url: "http://nginx:80"
   sysmetrics:
     port: 1024
-    domain: "http://sysmetrics:1024/metrics"
+    url: "http://sysmetrics:1024/metrics"
   grafana:
     port: 3000
-    domain: "http://grafana:3000"
+    url: "http://grafana:3000"
   prometheus:
     port: 9090
-    domain: "http://prometheus:9090"
+    url: "http://prometheus:9090"
