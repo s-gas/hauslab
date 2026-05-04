@@ -106,7 +106,7 @@ A reverse proxy ([nginx](./services/nginx)) allows each service to be accessible
 
 All hostnames points to the same IP and are routed to the correct service by the reverse proxy.
 
-The following entries need to be added to `etc/hosts` on every device that needs to access the services:
+The following entries need to be added to `/etc/hosts` on every device that needs to access the services:
 
 ```bash
 192.168.178.2   hauslab
