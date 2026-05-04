@@ -13,10 +13,10 @@ The services to be checked are parsed from `services.yaml`, which has the follow
 services:
   <service_name>:
     port: <port_number>
-    domain: <url>
+    url: <url>
   <service_name>:
     port: <port_number>
-    domain: <url>
+    url: <url>
 ```
 
 To add a new service, add a new entry to `services.yaml`.

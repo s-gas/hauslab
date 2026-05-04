@@ -9,7 +9,7 @@ import (
 
 type Service struct {
 	mutex     sync.Mutex
-	Url       string `yaml:"domain"`
+	Url       string `yaml:"url"`
 	statusLog string
 	Port      int `yaml:"port"`
 	status    int
