@@ -52,6 +52,12 @@ Current services:
 
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
+- ### [nginx](./services/nginx)
+
+  Reverse proxy that routes requests to each service.
+
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+
 ## Networks
 
 Since every service has its own `docker-compose.yaml`, communication is enabled through external Docker networks.
@@ -90,13 +96,19 @@ The homelab uses a static IP address:
 
 In this way it is easily accessible from other devices connected to the same network.
 
-The following entry has been added to `etc/hosts`:
+## Hostnames
+
+A reverse proxy ([nginx](./services/nginx)) allows each service to be accessible via its own subdomain.
+
+All hostnames points to the same IP and are routed to the correct service by the reverse proxy.
+
+The following entries need to be added to `etc/hosts` on every device that needs to access the services:
 
 ```bash
-192.168.178.2 	hauslab
+192.168.178.2   grafana.hauslab
+192.168.178.2   prometheus.hauslab
+192.168.178.2   adguard.hauslab
 ```
-
-In this way the hostname `hauslab` can be used instead of the IP address.
 
 ## Host Ports
 
@@ -107,9 +119,7 @@ The following ports are exposed on the host machine:
 | 22   |  TCP     | SSH            |
 | 53   |  TCP     | DNS (AdGuard)  |
 | 53   |  UDP     | DNS (AdGuard)  |
-| 1024 |  TCP     | Grafana        |
-| 1025 |  TCP     | AdGuard Web    |
-| 1026 |  TCP     | AdGuard Setup  |
+| 80   |  TCP     | Nginx          |
 
 ## SSH
 
