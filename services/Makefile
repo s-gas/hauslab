@@ -1,4 +1,5 @@
 up:
+	docker network create proxy || true
 	docker network create sysmetrics-observability || true
 	docker network create svcmonitor-observability || true
 	docker network create monitor || true
@@ -15,3 +16,4 @@ down:
 	docker network rm monitor || true
 	docker network rm sysmetrics-observability || true
 	docker network rm svcmonitor-observability || true
+	docker network rm proxy || true
