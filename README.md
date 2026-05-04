@@ -112,6 +112,8 @@ The following entries need to be added to `etc/hosts` on every device that needs
 192.168.178.2   hauslab
 192.168.178.2   grafana.hauslab
 192.168.178.2   prometheus.hauslab
+192.168.178.2   adguard.hauslab
+192.168.178.2   setup.adguard.hauslab
 ```
 
 ## Host Ports
@@ -124,8 +126,6 @@ The following ports are exposed on the host machine:
 | 53   |  TCP     | DNS (AdGuard)  |
 | 53   |  UDP     | DNS (AdGuard)  |
 | 80   |  TCP     | Nginx          |
-| 1024 |  TCP     | AdGuard Web UI |
-| 1025 |  TCP     | AdGuard Setup  |
 
 ## SSH
 

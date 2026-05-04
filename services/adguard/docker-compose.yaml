@@ -5,12 +5,11 @@ services:
     ports:
       - 53:53/tcp # DNS
       - 53:53/udp # DNS
-      - 1024:80/tcp # web interface
-      - 1025:3000/tcp # initial setup
     volumes:
       - config:/opt/adguardhome/conf
       - work:/opt/adguardhome/work
     networks:
+      - proxy
       - monitor
 
 volumes:
@@ -18,5 +17,7 @@ volumes:
   work:
 
 networks:
+  proxy:
+    external: true
   monitor:
     external: true

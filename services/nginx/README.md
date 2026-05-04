@@ -6,8 +6,10 @@ Docker container running a reverse proxy that routes incoming HTTP requests to t
 
 ## Virtual hosts (Subdomains)
 
-- `grafana.hauslab`
-- `prometheus.hauslab`
+- `grafana.hauslab`: Grafana Web UI
+- `prometheus.hauslab`: Prometheus Web UI
+- `adguard.hauslab`: AdGuard Web UI
+- `setup.adguard.hauslab`: AdGuard Initial Setup
 
 ## How to add a virtual host
 
