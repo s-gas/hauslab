@@ -26,7 +26,6 @@ func checkServices(services map[string]*Service) {
 
 func checkService(name string, s *Service) {
 	resp, err := http.Get(s.Domain)
-	log.Println(s.Domain)
 	if err == nil {
 		defer resp.Body.Close()
 	}
