@@ -54,7 +54,7 @@ Current services:
 
 - ### [nginx](./services/nginx)
 
-  Reverse proxy that routes requests to each service.
+  Web server and reverse proxy.
 
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
@@ -67,7 +67,7 @@ These networks are created by the `Makefile` before the containers are started.
 Current networks:
 - **monitor**:
   
-  Allows **svcmonitor** to send request to all the other services
+  Allows **svcmonitor** to send request to all the other services.
 
 - **sysmetrics-observability**:
   

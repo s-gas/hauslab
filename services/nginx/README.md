@@ -2,10 +2,11 @@
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-Docker container running a reverse proxy that routes incoming HTTP requests to the correct services based on the subdomain.
+Docker container acting as web server and reverse proxy. It serves the hauslab Web UI as a static file and it routes incoming HTTP requests to the correct services based on the subdomain.
 
 ## Virtual hosts (Subdomains)
 
+- `hauslab`: Hauslab Web UI
 - `grafana.hauslab`: Grafana Web UI
 - `prometheus.hauslab`: Prometheus Web UI
 - `adguard.hauslab`: AdGuard Web UI
