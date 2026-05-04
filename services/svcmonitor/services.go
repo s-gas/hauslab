@@ -8,11 +8,11 @@ import (
 )
 
 type Service struct {
+	mutex     sync.Mutex
 	Url       string `yaml:"domain"`
 	statusLog string
 	Port      int `yaml:"port"`
 	status    int
-	mutex     sync.Mutex
 }
 
 func checkServices(services map[string]*Service) {
