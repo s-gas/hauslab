@@ -42,6 +42,12 @@ func getServices() map[string]*service {
 		domain: "http://adguardhome:80",
 		status: 0,
 	}
+	services["nginx"] = &service{
+		name:   "nginx",
+		port:   80,
+		domain: "http://nginx:80",
+		status: 0,
+	}
 	return services
 }
 

@@ -11,7 +11,10 @@ services:
       - "80:80"
     networks:
       - proxy
+      - monitor
 
 networks:
   proxy:
+    external: true
+  monitor:
     external: true

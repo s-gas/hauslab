@@ -1,3 +1,5 @@
 .gitignore
 README.md
-svcmonitor.log
+.dockerignore
+docker-compose.yaml
+Dockerfile

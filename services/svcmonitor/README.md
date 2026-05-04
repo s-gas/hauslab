@@ -25,7 +25,7 @@ The services can be considered:
 
 This service does **not expose ports to the host system**.
 
-The HTTP server listens on port `1025` and is reachable by the **Observability** stack through an external Docker network called `svcmonitor-observability`.
+The HTTP server listens on port `1024` and is reachable by the **Observability** stack through an external Docker network called `svcmonitor-observability`.
 
 Metrics are exposed at:
 
