@@ -4,6 +4,8 @@ services:
   svcmonitor:
     build: .
     container_name: svcmonitor
+    volumes:
+      - ./services.yaml:./services.yaml
     environment:
       - TZ=Europe/Berlin
     networks:
