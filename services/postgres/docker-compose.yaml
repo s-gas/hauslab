@@ -1,0 +1,11 @@
+name: postgres
+
+services:
+  postgres:
+    image: postgres:17.9
+    secrets:
+      - postgres_password
+
+secrets:
+  postgres_password:
+    file: secrets/postgres_password.txt
