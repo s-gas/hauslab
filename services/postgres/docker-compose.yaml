@@ -5,6 +5,13 @@ services:
     image: postgres:17.9
     secrets:
       - postgres_password
+    environment:
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data: {}
 
 secrets:
   postgres_password:
