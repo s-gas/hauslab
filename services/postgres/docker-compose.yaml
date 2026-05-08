@@ -3,6 +3,7 @@ name: postgres
 services:
   postgres:
     image: postgres:17.9
+    container_name: postgres
     secrets:
       - postgres_password
     environment:
