@@ -14,6 +14,8 @@ http://adguard.hauslab
 
 The request is routed to AdGuard by a reverse proxy based on the hostname.
 
+Login as `s-gas`.
+
 ## Upstream DNS servers
 
 ```bash
