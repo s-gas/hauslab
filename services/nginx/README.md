@@ -22,7 +22,7 @@ server {
     listen 80;
     location / {
         proxy_set_header Host $host;
-        proxy_pass http://<container_name>:<port>;
+        proxy_pass http://<service-name>:<port>;
     }
 }
 ```
