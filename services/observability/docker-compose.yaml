@@ -27,6 +27,7 @@ services:
     secrets:
       - grafana_password
     environment:
+      - GF_SECURITY_ADMIN_USER=s-gas
       - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/grafana_password
     restart: unless-stopped
 
