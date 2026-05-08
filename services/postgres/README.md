@@ -25,3 +25,13 @@ From another container in the same network run:
 ```bash
 psql -h postgres -U $POSTGRES_USER -d $POSTGRES_DB
 ```
+
+## Troubleshooting
+
+### Wrong password
+
+A possible reason for a wrong password error is having `\n` in the password. To avoid this, always use `printf` when creating the file to use as Docker secret:
+
+```bash
+printf "<password>" > /secrets/<file_name>
+```
