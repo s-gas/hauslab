@@ -9,15 +9,12 @@ services:
       - config:/opt/adguardhome/conf
       - work:/opt/adguardhome/work
     networks:
-      - proxy
-      - monitor
+      - hauslab
 
 volumes:
   config:
   work:
 
 networks:
-  proxy:
-    external: true
-  monitor:
+  hauslab:
     external: true

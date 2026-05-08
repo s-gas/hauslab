@@ -9,12 +9,9 @@ services:
     environment:
       - TZ=Europe/Berlin
     networks:
-      - monitor
-      - svcmonitor-observability
+      - hauslab
     restart: unless-stopped
 
 networks:
-  monitor:
-    external: true
-  svcmonitor-observability:
+  hauslab:
     external: true

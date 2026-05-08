@@ -8,10 +8,7 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
     networks:
-      - proxy
-      - monitor
-      - sysmetrics-observability
-      - svcmonitor-observability
+      - hauslab
     restart: unless-stopped
 
   grafana:
@@ -20,10 +17,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
     networks:
-      - proxy
-      - monitor
-      - sysmetrics-observability
-      - svcmonitor-observability
+      - hauslab
     secrets:
       - grafana_password
     environment:
@@ -40,11 +34,5 @@ secrets:
     file: secrets/grafana_password.txt
 
 networks:
-  proxy:
-    external: true
-  monitor:
-    external: true
-  sysmetrics-observability:
-    external: true
-  svcmonitor-observability:
+  hauslab:
     external: true

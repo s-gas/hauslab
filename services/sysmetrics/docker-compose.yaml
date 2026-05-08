@@ -9,12 +9,9 @@ services:
     environment:
       - TZ=Europe/Berlin
     networks:
-      - monitor
-      - sysmetrics-observability
+      - hauslab
     restart: unless-stopped
 
 networks:
-  monitor:
-    external: true
-  sysmetrics-observability:
+  hauslab:
     external: true

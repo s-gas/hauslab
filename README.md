@@ -18,7 +18,7 @@ Lenovo ThinkCentre M710Q Tiny
 
 ## Services
 
-Each service has its own `docker-compose.yaml`.
+Each service runs in containers and has its own `docker-compose.yaml`.
 
 In this way services can be developed, deployed, and restarted independently.
 
@@ -26,21 +26,21 @@ Current services:
 
 - ### [sysmetrics](./services/sysmetrics)
 
-  Containerized server that exposes CPU and RAM usage.
+  Server that exposes CPU and RAM usage.
   
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 - ### [svcmonitor](./services/svcmonitor)
 
-  Containerized monitor that checks the status of the services and exposes them.
+  Monitor that checks the status of the services and exposes them.
 
   ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 - ### [observability](./services/observability)
 
-  Containerized observability stack running Prometheus and Grafana.
+  Observability stack running Prometheus and Grafana.
   
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
   ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat&logo=prometheus&logoColor=white)
@@ -48,7 +48,7 @@ Current services:
 
 - ### [adguard](./services/adguard)
 
-  Containerized DNS server with ad blocking.
+  DNS server with ad blocking.
 
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
@@ -58,28 +58,18 @@ Current services:
 
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-## Networks
+- ### [postgres](./services/postgres)
 
-Since every service has its own `docker-compose.yaml`, communication is enabled through external Docker networks.
+  PostgreSQL database.
 
-These networks are created by the `Makefile` before the containers are started.
+  ![Postgres](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-Current networks:
-- **monitor**:
-  
-  Allows **svcmonitor** to send request to all the other services.
+## Network
 
-- **sysmetrics-observability**:
-  
-  Allows communication between **sysmetrics** and the **observability** stack.
+Since every service has its own `docker-compose.yaml`, communication is enabled through an external Docker network.
 
-- **svcmonitor-observability**:
-  
-  Allows communication between **svcmonitor** and the **observability** stack.
-
-- **proxy**:
-
-  Allows **nginx** to route requests to all services accessible via subdomain.
+This network is created by the `Makefile` before the containers are started.
 
 ## Scripts
 
