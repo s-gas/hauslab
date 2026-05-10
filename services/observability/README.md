@@ -39,7 +39,7 @@ http://grafana.hauslab
 
 The request is routed to Grafana by a reverse proxy based on the hostname.
 
-Login as `admin` using the password stored in `secrets/grafana_password.txt`.
+Login as `s-gas` using the password stored in `secrets/grafana_password.txt`.
 
 
 ## Prometheus Web UI
