@@ -1,6 +1,6 @@
-# ci
+# continuous integration
 
-Continuous integration is done through GitHub Actions.
+CI is done through GitHub Actions.
 
 ## Pipeline
 
@@ -16,4 +16,4 @@ The following action secrets need to be added the GitHub repository:
 - `DOCKERHUB_USERNAME`
 - `DOCKERHUB_PASSWORD`
 
-To add an action secrets, in the projects repository go to **Settings**->**Secrets and variables**->**Actions**.
+To add an action secret, in the projects repository go to **Settings**->**Secrets and variables**->**Actions**.
