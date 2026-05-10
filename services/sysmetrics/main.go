@@ -9,14 +9,14 @@ import (
 func main() {
 	endpoint := "/metrics"
 	http.HandleFunc(endpoint, func(w http.ResponseWriter, r *http.Request) {
-		cpu, err := getCPUUsage()
+		cpu, err := getCpuUsage()
 		if err != nil {
-			log.Println("Failed to get CPU usage")
+			log.Println(err)
 			return
 		}
-		ram, err := getRAMUsage()
+		ram, err := getRamUsage()
 		if err != nil {
-			log.Println("Failed to get RAM usage")
+			log.Println(err)
 			return
 		}
 		writeMetrics(w, cpu, ram)
