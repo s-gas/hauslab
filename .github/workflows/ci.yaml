@@ -36,3 +36,10 @@ jobs:
           context: services/sysmetrics
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/sysmetrics:latest
+
+      - name: Build and push gasmetrics
+        uses: docker/build-push-action@v7
+        with:
+          context: services/gasmetrics
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/gasmetrics:latest

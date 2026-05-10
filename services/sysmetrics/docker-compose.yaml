@@ -2,7 +2,7 @@ name: sysmetrics
 
 services:
   sysmetrics:
-    build: .
+    image: sgasparini/sysmetrics:latest
     container_name: sysmetrics
     volumes:
       - /proc:/proc

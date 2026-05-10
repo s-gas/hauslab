@@ -2,7 +2,7 @@ name: svcmonitor
 
 services:
   svcmonitor:
-    build: .
+    image: sgasparini/svcmonitor:latest
     container_name: svcmonitor
     volumes:
       - ./services.yaml:/usr/src/app/services.yaml
