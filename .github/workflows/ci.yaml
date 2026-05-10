@@ -1,0 +1,15 @@
+name: ci
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v5
+
+      - name: run tests for gasmetrics
+        run: cd services/gasmetrics && go test ./...
