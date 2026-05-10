@@ -28,7 +28,7 @@ jobs:
         with:
           context: services/svcmonitor
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/svmonitor:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/svcmonitor:latest
 
       - name: Build and push sysmetrics
         uses: docker/build-push-action@v7
