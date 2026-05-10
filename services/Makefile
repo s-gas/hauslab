@@ -6,8 +6,10 @@ up:
 	docker compose -f sysmetrics/docker-compose.yaml up -d --pull always
 	docker compose -f svcmonitor/docker-compose.yaml up -d --pull always
 	docker compose -f nginx/docker-compose.yaml up -d --pull always
+	docker compose -f postgres/docker-compose.yaml up -d --pull always
 
 down:
+	docker compose -f postgres/docker-compose.yaml down
 	docker compose -f nginx/docker-compose.yaml down
 	docker compose -f adguard/docker-compose.yaml down
 	docker compose -f observability/docker-compose.yaml down
