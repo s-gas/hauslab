@@ -65,6 +65,12 @@ Current services:
   ![Postgres](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
+## CI/CD
+
+**CI**: GitHub Actions builds and pushes the Docker images.
+
+**CD**: [pull-and-run.sh](./scripts/pull-and-run) runs as a cron job, pulling the latest images and redeploying the services.
+
 ## Network
 
 Since every service has its own `docker-compose.yaml`, communication is enabled through an external Docker network.
@@ -115,15 +121,3 @@ The homelab runs an SSH server, which means it can be accessed by any device in 
 ```bash
 ssh <username>@hauslab
 ```
-
-## Makefile
-
-In the `services` directory there is a `Makefile` that can be used to start and stop all the services.
-
-## Scripts
-
-- ### [pull-and-run](./scripts/pull-and-run)
-  
-  Cron job that pulls the latest Docker images and redeploys all services by running the `Makefile`.
-
-  ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)

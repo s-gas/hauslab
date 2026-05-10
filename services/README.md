@@ -1,10 +1,10 @@
 # services
 
-This directory contains all the services running in the homelab
+This directory contains all the services running in the homelab.
 
 ## Makefile
 
-A `Makefile` can be used to:
+The `Makefile` can be used to:
 - start all the services:
 ```bash
 make up
