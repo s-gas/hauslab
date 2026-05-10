@@ -1,4 +1,5 @@
 up:
+	docker image prune -f
 	docker network create hauslab || true
 	docker compose -f adguard/docker-compose.yaml up -d --pull always
 	docker compose -f observability/docker-compose.yaml up -d --pull always

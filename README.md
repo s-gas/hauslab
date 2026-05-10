@@ -71,15 +71,6 @@ Since every service has its own `docker-compose.yaml`, communication is enabled 
 
 This network is created by the `Makefile` before the containers are started.
 
-## Scripts
-
-- ### [pull-and-run](./scripts/pull-and-run)
-  
-  Automated script that pulls the latest commit and redeploys all services.
-
-  ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
-
-
 ## IP Address
 
 The homelab uses a static IP address:
@@ -124,3 +115,15 @@ The homelab runs an SSH server, which means it can be accessed by any device in 
 ```bash
 ssh <username>@hauslab
 ```
+
+## Makefile
+
+In the `services` directory there is a `Makefile` that can be used to start and stop all the services.
+
+## Scripts
+
+- ### [pull-and-run](./scripts/pull-and-run)
+  
+  Cron job that pulls the latest Docker images and redeploys all services by running the `Makefile`.
+
+  ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat&logo=gnubash&logoColor=white)
