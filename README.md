@@ -67,9 +67,9 @@ Current services:
 
 ## CI/CD
 
-**CI**: GitHub Actions builds and pushes the Docker images.
+**Continuous Integration**: GitHub Actions builds and pushes the Docker images.
 
-**CD**: [pull-and-run.sh](./scripts/pull-and-run) runs as a cron job, pulling the latest images and redeploying the services.
+**Continuous Deployment**: [pull-and-run.sh](./scripts/pull-and-run) runs as a cron job, pulling the latest images and redeploying the services.
 
 ## Network
 
