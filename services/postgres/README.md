@@ -10,7 +10,7 @@ Docker container running PostgreSQL database.
 The database is configured with the following environment variables:
 - `POSTGRES_PASSWORD_FILE`: path to the Docker secret file containing the password
 - `POSTGRES_USER`: default superuser
-- `POSTGRES_DB`: defaul database
+- `POSTGRES_DB`: default database
 
 ## Connecting
 
