@@ -24,6 +24,13 @@ In this way services can be developed, deployed, and restarted independently.
 
 Current services:
 
+- ### [gasmetrics](./services/gasmetrics)
+
+  Telegram bot for tracking home gas readings.
+  
+  ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+
 - ### [sysmetrics](./services/sysmetrics)
 
   Server that exposes CPU and RAM usage.
