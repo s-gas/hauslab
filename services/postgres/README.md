@@ -5,6 +5,21 @@
 
 Docker container running PostgreSQL database.
 
+## How to run
+
+Create the file to store the password:
+
+```bash
+mkdir secrets
+printf '<password>' > secrets/postgres_password.txt
+```
+
+Run the container:
+
+```bash
+docker compose up
+```
+
 ## Configuration
 
 The database is configured with the following environment variables:
