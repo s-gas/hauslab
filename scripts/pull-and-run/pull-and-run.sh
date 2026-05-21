@@ -1,5 +1,7 @@
 #!/bin/bash
 
+date
+
 cd /home/s-gas/hauslab
 
 git pull
