@@ -7,6 +7,7 @@ Docker container acting as web server and reverse proxy. It serves the hauslab W
 ## Virtual hosts (Subdomains)
 
 - `hauslab`: Hauslab Web UI
+- `gasmetrics.hauslab`: Gasmetrics server
 - `grafana.hauslab`: Grafana Web UI
 - `prometheus.hauslab`: Prometheus Web UI
 - `adguard.hauslab`: AdGuard Web UI
@@ -31,4 +32,18 @@ Add the hostname to `/etc/hosts` on every device that needs access:
 
 ```bash
 192.168.178.2    <subdomain>.hauslab
+```
+
+## Troubleshooting
+
+Test the configuration file:
+
+```bash
+docker exec nginx nginx -t
+```
+
+Reload the configuration file:
+
+```bash
+docker exec nginx nginx -s reload
 ```
