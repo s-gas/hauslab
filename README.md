@@ -72,6 +72,12 @@ Current services:
   ![Postgres](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
+- ### [vaultwarden](./services/vaultwarden)
+
+  Password manager.
+
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+
 ## CI/CD
 
 **Continuous Integration**: GitHub Actions builds and pushes the Docker images.
@@ -109,6 +115,7 @@ The following entries need to be added to `/etc/hosts` on every device that need
 192.168.178.2   prometheus.hauslab
 192.168.178.2   adguard.hauslab
 192.168.178.2   setup.adguard.hauslab
+192.168.178.2   vaultwarden.hauslab
 ```
 
 ## Host Ports

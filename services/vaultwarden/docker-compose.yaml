@@ -7,7 +7,7 @@ services:
     volumes:
       - ./vw-data:/data
     environment:
-      - SIGNUPS_ALLOWED=false
+      - SIGNUPS_ALLOWED=true
       - WEBSOCKET_ENABLED=true
     networks:
       - hauslab
