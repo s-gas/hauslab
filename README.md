@@ -104,6 +104,7 @@ The following entries need to be added to `/etc/hosts` on every device that need
 
 ```bash
 192.168.178.2   hauslab
+192.168.178.2   gasmetrics.hauslab
 192.168.178.2   grafana.hauslab
 192.168.178.2   prometheus.hauslab
 192.168.178.2   adguard.hauslab
