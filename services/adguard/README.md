@@ -22,6 +22,37 @@ Login as `s-gas`.
 https://dns.quad9.net/dns-query
 https://dns.cloudflare.com/dns-query
 ```
+## Fritzbox setup
+
+To set up AdGuard as DNS server, go to the FrizBox homepage:
+
+```
+http://192.168.178.1
+```
+
+To change what DNS server the Fritzbox uses, go to:
+
+```
+Internet->Zugangsart->DNS-Server
+```
+
+Set the DNS server IPv4 to the IP address of AdGuard, which is:
+
+```
+192.168.178.2
+```
+
+To change what DNS the Fritzbox tells the devices to use via DHCP, go to:
+
+```
+Heimnetz->Netzwerkeinstellungen->IP-Adressen->IPv4-Einstellungen
+```
+
+Set Lokaler DNS-Server to:
+
+```
+192.168.178.2
+```
 
 ## Troubleshooting
 
