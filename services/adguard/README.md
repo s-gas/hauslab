@@ -6,11 +6,11 @@ Docker container running AdGuard Home, a network ad-blocking DNS server.
 
 ## Web UI
 
-```bash
+```
 http://adguard.hauslab
 ```
 
-`adguard.hauslab` is a hostname mapped to `192.168.178.2` in `/etc/hosts`.
+`adguard.hauslab` is a hostname mapped to `192.168.178.2` via DNS rewrites.
 
 The request is routed to AdGuard by a reverse proxy based on the hostname.
 
@@ -18,11 +18,20 @@ Login as `s-gas`.
 
 ## Upstream DNS servers
 
-```bash
+```
 https://dns.quad9.net/dns-query
 https://dns.cloudflare.com/dns-query
 ```
-## Fritzbox setup
+
+## DNS rewrites
+
+All the domain names for the homelab are resolved through DNS rewrites, to add a new entry go to:
+
+```
+Filters->DNS rewrites
+```
+
+## FRITZ!Box setup
 
 To set up AdGuard as DNS server, go to the FrizBox homepage:
 
