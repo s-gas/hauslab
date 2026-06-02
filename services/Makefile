@@ -9,6 +9,7 @@ up:
 	docker compose -f svcmonitor/docker-compose.yaml up -d --pull always
 	docker compose -f gasmetrics/docker-compose.yaml up -d --pull always
 	docker compose -f nginx/docker-compose.yaml up -d --pull always
+	docker exec nginx nginx -s reload
 
 down:
 	docker compose -f nginx/docker-compose.yaml down
