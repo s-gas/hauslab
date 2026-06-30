@@ -11,7 +11,7 @@ import (
 	"os"
 )
 
-const url = "http://gasmetrics-server" // Docker domain name
+var url = "http://gasmetrics-server" // Docker domain name
 
 func main() {
 	bot, err := telegram.CreateBot()
@@ -25,9 +25,12 @@ func main() {
 	updates := telegram.GetUpdates(bot)
 
 	for update := range updates {
+		var msg string
 		r, err := reading.Parse(update.Message.Text)
 		if err != nil {
 			log.Println(err)
+			msg = fmt.Sprintf("Failed to add entry: %v", err)
+			telegram.Reply(msg, bot, update)
 			continue
 		}
 		body, err := json.Marshal(r)
@@ -40,13 +43,12 @@ func main() {
 			log.Println(err)
 			continue
 		}
-		defer resp.Body.Close()
+		resp.Body.Close()
 
-		var msg string
 		if resp.StatusCode == http.StatusCreated {
 			msg = "Entry added successfully"
 		} else {
-			msg = fmt.Sprintf("Failed to add entry: status code: %v", resp.StatusCode)
+			msg = "Failed to add entry: invalid input"
 		}
 		log.Println(msg)
 		telegram.Reply(msg, bot, update)

@@ -14,13 +14,13 @@ type Reading struct {
 
 func Parse(msg string) (Reading, error) {
 	if len(msg) == 0 {
-		return Reading{}, errors.New("Parse: message is empty")
+		return Reading{}, errors.New("Input is empty")
 	}
 	var r Reading
 	var err error
 	r.Value, err = strconv.Atoi(msg)
 	if err != nil {
-		return Reading{}, fmt.Errorf("Parse: %w", err)
+		return Reading{}, fmt.Errorf("Input is not a number")
 	}
 	r.Date = time.Now()
 	return r, nil
