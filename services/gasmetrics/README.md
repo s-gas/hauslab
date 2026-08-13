@@ -146,7 +146,8 @@ cd gasmetrics
 Create the files to store the Telegram token and the PostgreSQL password:
 
 ```bash
-mkdir secrets
+mkdir gasmetrics-bot/secrets
+mkdir gasmetrics-server/secrets
 printf '<token>' > gasmetrics-bot/secrets/telegram_token.txt
 printf '<password>' > gasmetrics-server/secrets/postgres_password.txt
 ```
