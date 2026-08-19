@@ -129,3 +129,7 @@ The homelab runs an SSH server, which means it can be accessed by any device in 
 ```bash
 ssh <username>@hauslab
 ```
+
+### SSH Hardening
+
+`99-hardening.conf` in `sshd_config.d` disables using SSH with `root`.
