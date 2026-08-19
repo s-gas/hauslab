@@ -16,9 +16,9 @@ Lenovo ThinkCentre M710Q Tiny
 - **RAM**: 8GB
 - **OS**: Debian
 
-## Services
+## Docker Services
 
-Each service runs in containers and has its own `docker-compose.yaml`.
+Each service has its own `docker-compose.yaml`.
 
 In this way services can be developed, deployed, and restarted independently.
 
@@ -72,17 +72,17 @@ Current services:
   ![Postgres](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
+## Docker Network
+
+Since every service has its own `docker-compose.yaml`, communication is enabled through an external Docker network.
+
+This network is created by the `Makefile` before the containers are started.
+
 ## CI/CD
 
 **Continuous Integration**: GitHub Actions builds and pushes the Docker images.
 
 **Continuous Deployment**: [pull-and-run](./scripts/pull-and-run) runs as a cron job, pulling the latest images and redeploying the services.
-
-## Network
-
-Since every service has its own `docker-compose.yaml`, communication is enabled through an external Docker network.
-
-This network is created by the `Makefile` before the containers are started.
 
 ## IP Address
 
@@ -132,4 +132,14 @@ ssh <username>@hauslab
 
 ### SSH Hardening
 
-`99-hardening.conf` in `sshd_config.d` disables using SSH with `root`.
+`sshd` is configured so that:
+
+- `root` is not allowed to SSH into the server
+- It's not allowed to SSH with a password
+
+This is configured through `99-hardening.conf` in `/etc/ssh/sshd_config.d`:
+
+```bash
+PermitRootLogin no
+PasswordAuthentication no
+```
