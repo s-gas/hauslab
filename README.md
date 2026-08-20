@@ -78,11 +78,13 @@ Since every service has its own `docker-compose.yaml`, communication is enabled 
 
 This network is created by the `Makefile` before the containers are started.
 
-## CI/CD
+## Non-default Host Services (`systemd`)
 
-**Continuous Integration**: GitHub Actions builds and pushes the Docker images.
+- ### NetworkManager (`NetworkManager.service`)
 
-**Continuous Deployment**: [pull-and-run](./scripts/pull-and-run) runs as a cron job, pulling the latest images and redeploying the services.
+- ### Cockpit (`cockpit.socket`)
+  
+  The web console is accessible at `https://hauslab:9090`.
 
 ## IP Address
 
@@ -121,6 +123,7 @@ The following ports are exposed on the host machine:
 | 53   |  TCP     | DNS (AdGuard)  |
 | 53   |  UDP     | DNS (AdGuard)  |
 | 80   |  TCP     | Nginx          |
+| 9090 |  TCP     | Cockpit        |
 
 ## SSH
 
@@ -143,3 +146,9 @@ This is configured through `99-hardening.conf` in `/etc/ssh/sshd_config.d`:
 PermitRootLogin no
 PasswordAuthentication no
 ```
+
+## CI/CD
+
+**Continuous Integration**: GitHub Actions builds and pushes the Docker images.
+
+**Continuous Deployment**: [pull-and-run](./scripts/pull-and-run) runs as a cron job, pulling the latest images and redeploying the services.
