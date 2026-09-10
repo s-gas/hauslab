@@ -17,3 +17,5 @@ To modify the entry, run:
 ```bash
 crontab -e
 ```
+
+The output of the script is stored in `/home/s-gas/hauslab/scripts/pull-and-run/pull-and-run.log`, which is weekly deleted by another cron job.
