@@ -2,10 +2,10 @@
 
 date
 
-cd /home/s-gas/hauslab
+cd /opt/hauslab
 
 git pull
 
-cd /home/s-gas/hauslab/services
+cd /opt/hauslab/services
 
 make up
