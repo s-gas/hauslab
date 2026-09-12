@@ -12,6 +12,7 @@ Docker container acting as web server and reverse proxy. It serves the hauslab W
 - `prometheus.hauslab`: Prometheus Web UI
 - `adguard.hauslab`: AdGuard Web UI
 - `setup.adguard.hauslab`: AdGuard Initial Setup
+- `cockpit.hauslab`: Cockpit
 
 ## How to add a virtual host
 
