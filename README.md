@@ -111,6 +111,7 @@ The subdomains are handled via AdGuard DNS rewrites, which contain the following
 192.168.178.2   prometheus.hauslab
 192.168.178.2   adguard.hauslab
 192.168.178.2   setup.adguard.hauslab
+192.168.178.2   cockpit.hauslab
 ```
 
 ## Host Ports
