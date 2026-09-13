@@ -84,7 +84,7 @@ This network is created by the `Makefile` before the containers are started.
 
 - ### Cockpit (`cockpit.socket`)
   
-  The web console is accessible at `https://hauslab:9090`.
+  The web console is accessible at `https://cockpit.hauslab`.
 
 ## IP Address
 
