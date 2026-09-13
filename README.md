@@ -102,7 +102,7 @@ A reverse proxy ([nginx](./services/nginx)) allows each service to be accessible
 
 All hostnames points to the same IP and are routed to the correct service by the reverse proxy.
 
-The subdomains are handled via AdGuard DNS rewrites, which contain the following entries:
+The subdomains are handled via AdGuard DNS rewrites, which contains the following entries:
 
 ```bash
 192.168.178.2   hauslab
