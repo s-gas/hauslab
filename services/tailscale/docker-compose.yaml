@@ -4,8 +4,10 @@ services:
     container_name: tailscale
     hostname: hauslab
     environment:
-      - TS_AUTHKEY=tskey-auth-kYLVNtr7Jp11CNTRL-NGzYQpB91HeyAbaDgqy1Ge2iHyFoJ1Pw
+      - TS_AUTHKEY=/run/secrets/ts_authkey
       - TS_STATE_DIR=/var/lib/tailscale
+    secrets:
+      - ts_authkey
     volumes:
       - ./tailscale-state:/var/lib/tailscale
     cap_add:
@@ -14,6 +16,10 @@ services:
     networks:
       - hauslab
     restart: unless-stopped
+
+secrets:
+  ts_authkey:
+    file: ./ts-authkey.txt
 
 networks:
   hauslab:
