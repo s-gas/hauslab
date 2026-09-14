@@ -11,4 +11,10 @@ services:
     cap_add:
       - net_admin
       - net_raw
+    networks:
+      - hauslab
     restart: unless-stopped
+
+networks:
+  hauslab:
+    external: true
