@@ -2,7 +2,7 @@ services:
   tailscale:
     image: tailscale/tailscale:v1.103
     container_name: tailscale
-    hostname: tailscale-nginx
+    hostname: hauslab
     environment:
       - TS_AUTHKEY=tskey-auth-kYLVNtr7Jp11CNTRL-NGzYQpB91HeyAbaDgqy1Ge2iHyFoJ1Pw
       - TS_STATE_DIR=/var/lib/tailscale
