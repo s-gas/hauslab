@@ -138,6 +138,8 @@ The homelab runs an SSH server, which means it can be accessed by any device in 
 ssh <username>@hauslab
 ```
 
+This will work also remotely if connected via Tailscale.
+
 ### SSH Hardening
 
 `sshd` is configured so that:
