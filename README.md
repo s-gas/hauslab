@@ -72,12 +72,6 @@ Current services:
   ![Postgres](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
   ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
-- ### [tailscale](./services/tailscale)
-
-  Encrypted VPN.
-
-  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-
 ## Docker Network
 
 Since every service has its own `docker-compose.yaml`, communication is enabled through an external Docker network.
