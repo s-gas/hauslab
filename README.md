@@ -138,7 +138,7 @@ The homelab runs an SSH server, which means it can be accessed by any device in 
 ssh <username>@hauslab
 ```
 
-This will work also remotely if connected via Tailscale.
+This will work also remotely if connected via Tailscale. Its MagicDNS will resolve `hauslab` to the Tailscale IP.
 
 ### SSH Hardening
 
