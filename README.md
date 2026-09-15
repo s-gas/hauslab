@@ -76,6 +76,8 @@ Current services:
 
   Encrypted VPN.
 
+  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+
 ## Docker Network
 
 Since every service has its own `docker-compose.yaml`, communication is enabled through an external Docker network.
