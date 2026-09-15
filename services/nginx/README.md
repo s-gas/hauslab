@@ -4,6 +4,18 @@
 
 Docker container acting as web server and reverse proxy. It serves the hauslab Web UI as a static file and it routes incoming HTTP requests to the correct services based on the subdomain.
 
+## Web page
+
+Nginx serves a web page with link to various services:
+
+- Grafana
+- Prometheus
+- AdGuard
+- Cockpit
+- Tailscale
+
+The 3 Docker services (Grafana, Prometheus, AdGuard) can be reached only from the same network. 
+
 ## Virtual hosts (Subdomains)
 
 Only Docker services are set as virtual hosts.
