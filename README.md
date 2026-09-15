@@ -86,6 +86,10 @@ This network is created by the `Makefile` before the containers are started.
   
   The web console is accessible at `https://cockpit.hauslab:9090`. It is accessed directly, bypassing nginx.
 
+- ### Tailscale (`tailscaled.service`)
+
+  Peer-to-peer VPN. The web console can be accessed at `https://console.tailscale.com`.
+
 ## IP Address
 
 The homelab uses a static IP address:
