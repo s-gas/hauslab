@@ -6,6 +6,8 @@ Docker container acting as web server and reverse proxy. It serves the hauslab W
 
 ## Virtual hosts (Subdomains)
 
+Only Docker services are set as virtual hosts.
+
 - `hauslab`: Hauslab Web UI
 - `gasmetrics.hauslab`: Gasmetrics server
 - `grafana.hauslab`: Grafana Web UI

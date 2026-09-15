@@ -84,7 +84,7 @@ This network is created by the `Makefile` before the containers are started.
 
 - ### Cockpit (`cockpit.socket`)
   
-  The web console is accessible at `https://cockpit.hauslab:9090`. It is accessed directly, bypassing nginx.
+  The web console is accessible at `https://cockpit.hauslab:9090`.
 
 - ### Tailscale (`tailscaled.service`)
 
