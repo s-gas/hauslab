@@ -10,7 +10,7 @@ Docker container running AdGuard Home, a network ad-blocking DNS server.
 http://adguard.hauslab
 ```
 
-`adguard.hauslab` is a hostname mapped to `192.168.178.2` via DNS rewrites.
+`adguard.hauslab` is a hostname mapped to `100.67.231.32`(homelab IP under tailnet) via DNS rewrites.
 
 The request is routed to AdGuard by a reverse proxy based on the hostname.
 
