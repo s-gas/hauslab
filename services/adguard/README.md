@@ -54,13 +54,31 @@ Set the DNS server IPv4 to the IP address of AdGuard, which is:
 To change what DNS the Fritzbox tells the devices to use via DHCP, go to:
 
 ```
-Heimnetz->Netzwerkeinstellungen->IP-Adressen->IPv4-Einstellungen
+Heimnetz->Netzwerk->Netzwerkeinstellungen->Erweiterte Netzwerkeinstellungen ändern->IPv4
 ```
 
 Set Lokaler DNS-Server to:
 
 ```
 192.168.178.2
+```
+
+To stop announcing the DNSv6 server via router advertisement and disable DHCPv6 go to:
+
+```
+Heimnetz->Netzwerk->Netzwerkeinstellungen->Erweiterte Netzwerkeinstellungen ändern->IPv6
+```
+
+Untick:
+
+```
+DNSv6-Server auch über Router Advertisement bekanntgeben (RFC 5006)
+```
+
+Tick:
+
+```
+DHCPv6-Server in der FRITZ!Box deaktivieren
 ```
 
 ## Troubleshooting
