@@ -42,12 +42,6 @@ server {
 }
 ```
 
-Add the hostname to AdGuard's DNS rewrites:
-
-```bash
-<subdomain>.hauslab 192.168.178.2
-```
-
 ## Troubleshooting
 
 Test the configuration file:
