@@ -90,15 +90,19 @@ This network is created by the `Makefile` before the containers are started.
 
   Peer-to-peer VPN. The web console can be accessed at `https://console.tailscale.com`.
 
-## IP Address
+## IP Addresses
 
-The homelab uses a static IP address:
+LAN:
 
 ```bash
 192.168.178.2
 ```
 
-In this way it is easily accessible from other devices connected to the same network.
+Tailscale:
+
+```bash
+100.67.231.32
+```
 
 ## Hostnames
 
@@ -106,15 +110,13 @@ A reverse proxy ([nginx](./services/nginx)) allows each service to be accessible
 
 All hostnames points to the same IP and are routed to the correct service by the reverse proxy.
 
+> **These hostnames only work on devices connected to Tailscale.**
+
 The subdomains are handled via AdGuard DNS rewrites, which contains the following entries:
 
 ```bash
-192.168.178.2   hauslab
-192.168.178.2   gasmetrics.hauslab
-192.168.178.2   grafana.hauslab
-192.168.178.2   prometheus.hauslab
-192.168.178.2   adguard.hauslab
-192.168.178.2   setup.adguard.hauslab
+100.67.231.32   hauslab
+100.67.231.32   *.hauslab
 ```
 
 ## Host Ports
@@ -136,8 +138,6 @@ The homelab runs an SSH server, which means it can be accessed by any device in 
 ```bash
 ssh <username>@hauslab
 ```
-
-This will work also remotely if connected via Tailscale. Its MagicDNS will resolve `hauslab` to the Tailscale IP.
 
 ### SSH Hardening
 
