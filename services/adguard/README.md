@@ -23,6 +23,18 @@ https://dns.quad9.net/dns-query
 https://dns.cloudflare.com/dns-query
 ```
 
+Both URLs are DoH (DNS over HTTPS).
+
+The mode is set to `Parallel Requests`
+
+## Fallback DNS servers
+
+```
+9.9.9.9
+```
+
+This URL is plain UDP.
+
 ## DNS rewrites
 
 All the domain names for the homelab are resolved through DNS rewrites, to add a new entry go to:
