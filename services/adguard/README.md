@@ -30,10 +30,18 @@ The mode is set to `Parallel Requests`
 ## Fallback DNS servers
 
 ```
-9.9.9.9
+1.1.1.1
+8.8.8.8
 ```
 
-This URL is plain UDP.
+## Bootstrap DNS servers
+
+```
+1.1.1.1
+8.8.8.8
+9.9.9.10
+149.112.112.10
+```
 
 ## DNS rewrites
 
