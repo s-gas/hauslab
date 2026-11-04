@@ -133,10 +133,16 @@ The following ports are exposed on the host machine:
 
 ## SSH
 
-The homelab runs an SSH server, which means it can be accessed by any device in the local network:
+Through tailscale:
 
 ```bash
-ssh <username>@hauslab
+ssh s-gas@hauslab
+```
+
+Through LAN:
+
+```bash
+ssh s-gas@192.168.178.2
 ```
 
 ### SSH Hardening
