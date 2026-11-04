@@ -133,7 +133,7 @@ The following ports are exposed on the host machine:
 
 ## SSH
 
-Through tailscale:
+Through Tailscale:
 
 ```bash
 ssh s-gas@hauslab
