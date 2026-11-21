@@ -6,8 +6,7 @@ CI is done through GitHub Actions.
 
 On every push, the pipeline:
 
-1. Runs tests for Go services
-2. Builds and pushes the Docker images to Docker Hub
+1. Builds and pushes the Docker images to Docker Hub
 
 ## Secrets
 

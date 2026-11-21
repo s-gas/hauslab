@@ -2,7 +2,7 @@ name: navidrome
 
 services:
   navidrome:
-    image: navidrome/navidrome:v0.64
+    image: navidrome/navidrome:latest
     container_name: navidrome
     restart: unless-stopped
     volumes:
