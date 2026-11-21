@@ -1,0 +1,16 @@
+name: navidrome
+
+services:
+  navidrome:
+    image: navidrome/navidrome:v0.64
+    container_name: navidrome
+    restart: unless-stopped
+    volumes:
+      - "./data:/data"
+      - "/srv/music:/music:ro"
+    networks:
+      - hauslab
+
+networks:
+  hauslab:
+    external: true
