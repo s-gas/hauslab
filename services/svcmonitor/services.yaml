@@ -17,3 +17,9 @@ services:
   prometheus:
     port: 9090
     url: "http://prometheus:9090"
+  postgres:
+    port: 5432
+    url: "http://postgres:5432"
+  navidrome:
+    port: 4533
+    url: http://navidrome:4533"
